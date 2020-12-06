@@ -6,8 +6,21 @@ export default class WordVisual extends Component {
     super()
   }
 
+  tilesContainerCreator = () => {
+    return(
+      <div className='tile-container'>
+        this.tilesCreator()
+      </div>
+    )
+  }
+
+  tilesCreator = () => {
+    return(
+        {this.props.letters.map(letter => `<div className='title'>${letter}</div>`)}
+      )
+  }
 
   render() {
-        return null
+    return this.tilesContainerCreator()
   }
 }
