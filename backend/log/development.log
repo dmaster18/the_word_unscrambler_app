@@ -12237,3 +12237,13 @@ Processing by WordsController#show as */*
 Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 0.3ms | Allocations: 2413)
 
 
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 17:34:40 -0500
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 91ms (Views: 4.0ms | ActiveRecord: 1.9ms | Allocations: 12769)
+
+
