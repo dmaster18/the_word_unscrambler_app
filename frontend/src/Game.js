@@ -40,9 +40,7 @@ export default class Game extends Component {
   render() {
     return (
       <div id="game">
-        Word name: {this.state.gameInfo.name}
-        <br></br>
-        Two letter words: {this.state.gameInfo.two_letter_words}
+        <WordContainer />
       </div>
     )
   }
