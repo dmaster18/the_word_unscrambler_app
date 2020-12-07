@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 
 export default class Word extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   }
 
   tilesContainerCreator = () => {
@@ -15,11 +15,15 @@ export default class Word extends Component {
   }
 
   tilesCreator = () => {
-    (this.props.randomLetters).map(letter => `<div className='title'>${letter}</div>`)
-
+    return (this.props.randomLetters).map(letter => <div className='tile'>{letter}</div>)
   }
 
   render() {
-    return this.tilesContainerCreator()
+    return (
+      <div className='tile-container'>
+        {console.log(this.props.randomLetters)}
+        {this.tilesCreator()}
+      </div>
+    )
   }
 }

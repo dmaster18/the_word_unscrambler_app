@@ -12,8 +12,10 @@ export default class WordContainer extends Component {
   }
 
   shuffleWordName() {
-    this.randomLetters = this.props.name.split('').sort(() => Math.random() - 0.5)
-    return this.randomLetters;
+    let randomLetters = this.props.name.split('').sort(() => Math.random() - 0.5)
+    this.setState({
+      randomLetters: randomLetters
+    })
   }
 
   increment = (userInput) => {
@@ -63,6 +65,7 @@ export default class WordContainer extends Component {
   }
 
   render() {
+    this.shuffleWordName()
     return (
       <Word name={this.props.name} randomLetters={this.state.randomLetters} />
     )
