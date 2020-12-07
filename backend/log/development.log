@@ -12886,3 +12886,382 @@ Processing by WordsController#show as */*
 Completed 200 OK in 15ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 2413)
 
 
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:20:01 -0500
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:20:01 -0500
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:20:01 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 2459)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:20:01 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 0.4ms | Allocations: 2432)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:20:02 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 19ms (Views: 7.2ms | ActiveRecord: 0.4ms | Allocations: 2439)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:20:02 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 19ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 2421)
+
+
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 2414)
+
+
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.5ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:25:08 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (2.2ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 29ms (Views: 11.9ms | ActiveRecord: 2.2ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:25:42 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (1.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 27ms (Views: 16.0ms | ActiveRecord: 1.3ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:26:03 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (1.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 1.4ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:27:18 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 21ms (Views: 13.2ms | ActiveRecord: 0.6ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:27:22 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.9ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.9ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:28:05 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.8ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:28:05 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 90ms (Views: 74.4ms | ActiveRecord: 0.6ms | Allocations: 2506)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:28:20 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.9ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 8.5ms | ActiveRecord: 0.9ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:31:13 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 17ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:31:13 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:31:57 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:32:11 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 17ms (Views: 7.1ms | ActiveRecord: 0.6ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:32:12 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 14ms (Views: 7.0ms | ActiveRecord: 0.4ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:35:05 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 17ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:35:34 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 22ms (Views: 11.5ms | ActiveRecord: 0.6ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:36:15 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (1.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 24ms (Views: 10.8ms | ActiveRecord: 1.5ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:37:15 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 59ms (Views: 4.7ms | ActiveRecord: 13.9ms | Allocations: 12769)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:37:37 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 2428)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:38:16 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 20ms (Views: 11.9ms | ActiveRecord: 0.6ms | Allocations: 2428)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:38:16 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 19ms (Views: 9.0ms | ActiveRecord: 0.7ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:38:22 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 23ms (Views: 13.4ms | ActiveRecord: 0.6ms | Allocations: 2428)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:38:22 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 21ms (Views: 10.5ms | ActiveRecord: 0.6ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:38:25 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 29ms (Views: 15.5ms | ActiveRecord: 0.6ms | Allocations: 2428)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:39:28 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 0.7ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:39:28 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 20ms (Views: 8.0ms | ActiveRecord: 0.8ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:39:32 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 13ms (Views: 6.9ms | ActiveRecord: 0.5ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:40:00 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 0.6ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:40:00 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 8.4ms | ActiveRecord: 0.6ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:40:40 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 0.8ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:40:40 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 19ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:40:47 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 60ms (Views: 26.5ms | ActiveRecord: 0.5ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:40:47 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 21ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:41:25 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 0.5ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:41:25 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 19ms (Views: 12.7ms | ActiveRecord: 0.7ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:41:28 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:41:28 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 7.9ms | ActiveRecord: 0.5ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:41:31 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (3.8ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 33ms (Views: 11.8ms | ActiveRecord: 3.8ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:42:44 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.9ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 15ms (Views: 8.4ms | ActiveRecord: 0.9ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:42:45 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:42:47 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (7.8ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 31ms (Views: 15.1ms | ActiveRecord: 7.8ms | Allocations: 2413)
+
+
+Started GET "/words/3" for 127.0.0.1 at 2020-12-06 22:42:47 -0500
+Processing by WordsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `show'
+Completed 200 OK in 20ms (Views: 7.2ms | ActiveRecord: 0.6ms | Allocations: 2413)
+
+

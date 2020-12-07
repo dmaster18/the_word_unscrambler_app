@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WordContainer from './game-components/WordContainer.js'
+import Word from './game-components/Word.js'
 import Response from './game-components/Response.js'
 import Timer from './game-components/Timer.js'
 import LeaderBoard from './game-components/LeaderBoard.js'
@@ -39,7 +40,7 @@ export default class Game extends Component {
   render() {
     return (
       <div id="game">
-        <WordContainer name={this.state.gameInfo.name} twoLetterWords={this.state.gameInfo.two_letter_words} threeLetterWords={this.state.gameInfo.three_letter_words} fourLetterWords={this.state.gameInfo.four_letter_words} fiveLetterWords={this.state.gameInfo.five_letter_words} sixLetterWords={this.state.gameInfo.six_letter_words} sevenLetterWords={this.state.gameInfo.seven_letter_words} eightLetterWords={this.state.gameInfo.eight_letter_words} nineLetterWords={this.state.gameInfo.nine_letter_words} />
+        <WordContainer title={this.state.gameInfo.name} twoLetterWords={this.state.gameInfo.two_letter_words} threeLetterWords={this.state.gameInfo.three_letter_words} fourLetterWords={this.state.gameInfo.four_letter_words} fiveLetterWords={this.state.gameInfo.five_letter_words} sixLetterWords={this.state.gameInfo.six_letter_words} sevenLetterWords={this.state.gameInfo.seven_letter_words} eightLetterWords={this.state.gameInfo.eight_letter_words} nineLetterWords={this.state.gameInfo.nine_letter_words} />
       </div>
     )
   }

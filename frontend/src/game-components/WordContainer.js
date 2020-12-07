@@ -3,16 +3,14 @@ import Word from './Word.js'
 
 export default class WordContainer extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       score: 0,
       randomLetters: []
     };
   }
-  /*
-
 
   increment = (userInput) => {
     const newScore = this.state.score + userInput.length
@@ -59,16 +57,16 @@ export default class WordContainer extends Component {
         break;
     }
   }
-  */
 
   shuffleWordName = () => {
-    let randomLetters = ("activized").split('').sort(() => Math.random() - 0.5)
+    let randomLetters = (this.props.title).split('').sort(() => Math.random() - 0.5)
     this.setState({
       randomLetters: randomLetters
     })
   }
 
   componentDidMount() {
+    console.log(this.props.title)
     this.shuffleWordName();
   }
 
