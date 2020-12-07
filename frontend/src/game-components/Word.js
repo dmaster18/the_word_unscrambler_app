@@ -16,7 +16,7 @@ export default class Word extends Component {
 
   tilesCreator = () => {
     return(
-        {this.props.letters.map(letter => `<div className='title'>${letter}</div>`)}
+        this.props.letters.map(letter => `<div className='title'>${letter}</div>`)
       )
   }
 

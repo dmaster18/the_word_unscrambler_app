@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Word from './game-components/Word.js'
+import WordContainer from './game-components/WordContainer.js'
 import Response from './game-components/Response.js'
 import Timer from './game-components/Timer.js'
 import LeaderBoard from './game-components/LeaderBoard.js'
@@ -31,7 +31,7 @@ export default class Game extends Component {
 
   generateWords(json) {
     json.data.map(word => {
-      <Word name={word.name} twoLetterWords={word.two_letter_words} threeLetterWords={word.three_letter_words} fourLetterWords={word.four_letter_words} fiveLetterWords={word.five_letter_words} sixLetterWords={word.six_letter_words} sevenLetterWords={word.seven_letter_words} eightLetterWords={word.eight_letter_words} nineLetterWords={word.nine_letter_words} />
+      <WordContainer name={word.name} twoLetterWords={word.two_letter_words} threeLetterWords={word.three_letter_words} fourLetterWords={word.four_letter_words} fiveLetterWords={word.five_letter_words} sixLetterWords={word.six_letter_words} sevenLetterWords={word.seven_letter_words} eightLetterWords={word.eight_letter_words} nineLetterWords={word.nine_letter_words} />
     })
   }
 
