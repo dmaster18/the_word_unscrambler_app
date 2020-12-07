@@ -64,7 +64,7 @@ export default class WordContainer extends Component {
 
   render() {
     return (
-      <Word name={this.props.name} letters={this.randomLetters} />
+      <Word name={this.props.name} randomLetters={this.state.randomLetters} />
     )
   }
 }

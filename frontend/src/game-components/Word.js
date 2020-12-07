@@ -9,15 +9,14 @@ export default class Word extends Component {
   tilesContainerCreator = () => {
     return(
       <div className='tile-container'>
-        this.tilesCreator()
+        {this.tilesCreator()}
       </div>
     )
   }
 
   tilesCreator = () => {
-    return(
-        this.props.letters.map(letter => `<div className='title'>${letter}</div>`)
-      )
+    (this.props.randomLetters).map(letter => `<div className='title'>${letter}</div>`)
+
   }
 
   render() {
