@@ -44,9 +44,8 @@
 
 div.tile-container {
     display: grid;
-    width: 100%;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    grid-gap: 10px;
+    grid-gap: 5px;
   }
 
 div.tile {

@@ -62,7 +62,7 @@ export default class WordContainer extends Component {
   */
 
   shuffleWordName = () => {
-    let randomLetters = (this.props.name).split('').sort(() => Math.random() - 0.5)
+    let randomLetters = ("activized").split('').sort(() => Math.random() - 0.5)
     this.setState({
       randomLetters: randomLetters
     })
