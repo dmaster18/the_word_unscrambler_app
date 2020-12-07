@@ -11,11 +11,12 @@ export default class WordContainer extends Component {
     };
   }
 
-  shuffleWordName() {
+  shuffleWordName = () => {
     let randomLetters = this.props.name.split('').sort(() => Math.random() - 0.5)
     this.setState({
       randomLetters: randomLetters
     })
+    //randomLetters
   }
 
   increment = (userInput) => {

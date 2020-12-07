@@ -29,18 +29,18 @@ export default class Game extends Component {
     )})
   }
 
-  generateWords(json) {
-    json.data.map(word => {
-      <WordContainer name={word.name} twoLetterWords={word.two_letter_words} threeLetterWords={word.three_letter_words} fourLetterWords={word.four_letter_words} fiveLetterWords={word.five_letter_words} sixLetterWords={word.six_letter_words} sevenLetterWords={word.seven_letter_words} eightLetterWords={word.eight_letter_words} nineLetterWords={word.nine_letter_words} />
-    })
+  generateWord() {
+    <WordContainer name={gameInfo.name} twoLetterWords={gameInfo.two_letter_words} threeLetterWords={gameInfo.three_letter_words} fourLetterWords={gameInfo.four_letter_words} fiveLetterWords={gameInfo.five_letter_words} sixLetterWords={gameInfo.six_letter_words} sevenLetterWords={gameInfo.seven_letter_words} eightLetterWords={gameInfo.eight_letter_words} nineLetterWords={gameInfo.nine_letter_words} />
+    //json.data.map(word => {
+    //  <WordContainer name={word.name} twoLetterWords={word.two_letter_words} threeLetterWords={word.three_letter_words} fourLetterWords={word.four_letter_words} fiveLetterWords={word.five_letter_words} sixLetterWords={word.six_letter_words} sevenLetterWords={word.seven_letter_words} eightLetterWords={word.eight_letter_words} nineLetterWords={word.nine_letter_words} />
+    //})
   }
-
-
 
   render() {
     return (
       <div id="game">
-        <WordContainer />
+        {this.generateWord()}
+        //<WordContainer />
       </div>
     )
   }
