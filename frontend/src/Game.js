@@ -14,8 +14,8 @@ export default class Game extends Component {
   }
 
   fetchWords() {
-      const words_url = `http://127.0.0.1:3000/words/3`;
-      return fetch(words_url).then(resp => resp.json());
+    const words_url = `http://127.0.0.1:3000/words/3`;
+    return fetch(words_url).then(resp => resp.json());
   }
 
   renderWords() {
@@ -23,23 +23,23 @@ export default class Game extends Component {
   }
 
   componentDidMount() {
-    this.fetchWords().then(json => {console.log(json);
-      this.setState(
-        {gameInfo: json.data.attributes}
+    this.fetchWords().then(json => {
+    this.setState(
+      {gameInfo: json.data.attributes}
     )})
   }
 
-  generateWord() {
-    <WordContainer name={gameInfo.name} twoLetterWords={gameInfo.two_letter_words} threeLetterWords={gameInfo.three_letter_words} fourLetterWords={gameInfo.four_letter_words} fiveLetterWords={gameInfo.five_letter_words} sixLetterWords={gameInfo.six_letter_words} sevenLetterWords={gameInfo.seven_letter_words} eightLetterWords={gameInfo.eight_letter_words} nineLetterWords={gameInfo.nine_letter_words} />
+  //generateWord() {
+    //<WordContainer name={this.state.gameInfo.name} twoLetterWords={this.state.gameInfo.two_letter_words} threeLetterWords={this.state.gameInfo.three_letter_words} fourLetterWords={this.state.gameInfo.four_letter_words} fiveLetterWords={this.state.gameInfo.five_letter_words} sixLetterWords={this.state.gameInfo.six_letter_words} sevenLetterWords={this.state.gameInfo.seven_letter_words} eightLetterWords={this.state.gameInfo.eight_letter_words} nineLetterWords={this.state.gameInfo.nine_letter_words} />
     //json.data.map(word => {
     //  <WordContainer name={word.name} twoLetterWords={word.two_letter_words} threeLetterWords={word.three_letter_words} fourLetterWords={word.four_letter_words} fiveLetterWords={word.five_letter_words} sixLetterWords={word.six_letter_words} sevenLetterWords={word.seven_letter_words} eightLetterWords={word.eight_letter_words} nineLetterWords={word.nine_letter_words} />
     //})
-  }
+  //}
 
   render() {
     return (
       <div id="game">
-        {this.generateWord()}
+        <WordContainer name={this.state.gameInfo.name} twoLetterWords={this.state.gameInfo.two_letter_words} threeLetterWords={this.state.gameInfo.three_letter_words} fourLetterWords={this.state.gameInfo.four_letter_words} fiveLetterWords={this.state.gameInfo.five_letter_words} sixLetterWords={this.state.gameInfo.six_letter_words} sevenLetterWords={this.state.gameInfo.seven_letter_words} eightLetterWords={this.state.gameInfo.eight_letter_words} nineLetterWords={this.state.gameInfo.nine_letter_words} />
         //<WordContainer />
       </div>
     )
