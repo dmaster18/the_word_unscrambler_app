@@ -21,7 +21,7 @@ export default class Word extends Component {
   render() {
     return (
       <div className='tile-container'>
-        {this.props.randomLetters}
+        {this.tilesCreator()}
       </div>
     )
   }

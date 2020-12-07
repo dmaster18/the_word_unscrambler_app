@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Word from './Word.js'
 
 export default class WordContainer extends Component {
+
   constructor() {
     super()
 
@@ -10,14 +11,8 @@ export default class WordContainer extends Component {
       randomLetters: []
     };
   }
+  /*
 
-  shuffleWordName = () => {
-    let randomLetters = this.props.name.split('').sort(() => Math.random() - 0.5)
-    this.setState({
-      randomLetters: randomLetters
-    })
-    //randomLetters
-  }
 
   increment = (userInput) => {
     const newScore = this.state.score + userInput.length
@@ -64,22 +59,22 @@ export default class WordContainer extends Component {
         break;
     }
   }
+  */
+
+  shuffleWordName = () => {
+    let randomLetters = (this.props.name).split('').sort(() => Math.random() - 0.5)
+    this.setState({
+      randomLetters: randomLetters
+    })
+  }
 
   componentDidMount() {
     this.shuffleWordName();
   }
 
-
-
-  tilesCreator = () => {
-    return (this.state.randomLetters).map(letter => <div className='tile'>{letter}</div>)
-  }
-
   render() {
     return (
-      <div className='tile-container'>
-        {this.tilesCreator()}
-      </div>
+      <Word randomLetters={this.state.randomLetters}/>
     )
   }
 }
