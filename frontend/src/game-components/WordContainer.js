@@ -65,10 +65,21 @@ export default class WordContainer extends Component {
     }
   }
 
+  componentDidMount() {
+    this.shuffleWordName();
+  }
+
+
+
+  tilesCreator = () => {
+    return (this.state.randomLetters).map(letter => <div className='tile'>{letter}</div>)
+  }
+
   render() {
-    //this.shuffleWordName()
     return (
-      <Word name={this.props.name} randomLetters={this.state.randomLetters} />
+      <div className='tile-container'>
+        {this.tilesCreator()}
+      </div>
     )
   }
 }
