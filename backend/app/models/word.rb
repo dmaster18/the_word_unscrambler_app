@@ -1,5 +1,5 @@
 class Word < ApplicationRecord
-  before_save :two_letter_words, :three_letter_words, :four_letter_words, :five_letter_words, :six_letter_words, :seven_letter_words, :eight_letter_words, :nine_letter_words, :sanitize_all_words
+  before_save :all_words, :two_letter_words, :three_letter_words, :four_letter_words, :five_letter_words, :six_letter_words, :seven_letter_words, :eight_letter_words, :nine_letter_words, :sanitize_all_words
 
   serialize :two_letter_words, Array
   serialize :three_letter_words, Array
@@ -26,5 +26,18 @@ class Word < ApplicationRecord
     sanitize(self.nine_letter_words)
     self
   end
-
+  
+  def all_words
+    all_words << two_letter_words
+    all_words << three_letter_words
+    all_words << four_letter_words
+    all_words << five_letter_words
+    all_words << six_letter_words
+    all_words << seven_letter_words
+    all_words << eight_letter_words
+    all_words << nine_letter_words
+    all_words.flatten
+    self.all_words = all_words
+  end
+  
 end
