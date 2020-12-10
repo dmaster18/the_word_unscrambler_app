@@ -26,8 +26,9 @@ class Word < ApplicationRecord
     sanitize(self.nine_letter_words)
     self
   end
-  
+
   def all_words
+    all_words = []
     all_words << two_letter_words
     all_words << three_letter_words
     all_words << four_letter_words
@@ -39,5 +40,5 @@ class Word < ApplicationRecord
     all_words.flatten
     self.all_words = all_words
   end
-  
+
 end

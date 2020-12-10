@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_014908) do
     t.text "seven_letter_words"
     t.text "eight_letter_words"
     t.text "nine_letter_words"
+    t.text "all_words"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
