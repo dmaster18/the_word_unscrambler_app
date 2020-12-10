@@ -37,7 +37,7 @@ class Word < ApplicationRecord
     all_words << seven_letter_words
     all_words << eight_letter_words
     all_words << nine_letter_words
-    all_words.flatten
+    all_words.flatten.flatten
     self.all_words = all_words
   end
 
