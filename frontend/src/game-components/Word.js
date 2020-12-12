@@ -27,24 +27,22 @@ export default class Word extends Component {
     return (<br><br><div><button onClick={this.handleSubmitButtonClick}>Submit Word</button></div>)
   }
 
-  handleSubmitButtonClick = (event) => {
-    this.words.push(this.wordArray.join(''));
-    this.wordArray = [];
-    this.setState(
-      {wordsFormed: this.words}
-    )
-  }
-
-  gameCreator = () => {
-    {this.tilesCreator()}
-    {this.submitButtonCreator()}
+  handleSubmitButtonClick = () => {
+    return (this.words.push(this.state.wordFormed))
   }
 
   render() {
     return (
       <div className='tile-container'>
         {this.gameCreator()}
+        {this.submitButtonCreator()}
       </div>
     )
   }
 }
+
+/*  this.wordArray = [];
+  this.setState(
+    {wordsFormed: this.words}
+  )
+}*/
