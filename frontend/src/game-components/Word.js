@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 export default class Word extends Component {
   constructor(props) {
     super(props)
-    this.eventArray = []
     this.wordArray = []
     this.words = []
     this.state = {
@@ -14,17 +13,14 @@ export default class Word extends Component {
   }
 
   tilesCreator() {
-    return ("activized".split("")/*this.props.randomLetters*/).map((letter, index) => <div className='tile' id={index}><button onClick={this.handleTileClick} value={letter}>{letter}</button></div>)
+    return ("activized".split("")/*this.props.randomLetters*/).map((letter, index) => <div className='tile' value={index}><button onClick={this.handleTileClick} value={letter}>{letter}</button></div>)
   }
 
   handleTileClick = (event) => {
-    if (!this.eventArray.includes(event.target.id)){
-      this.wordArray.push(event.target.value);
-      event.target.value = '';
+      this.wordArray.push(event.target.innerText);
       this.setState({
         wordFormed: this.wordArray.join('')
       });
-    }
   }
 
   handleDeleteLetterButtonClick = () => {
@@ -48,7 +44,6 @@ export default class Word extends Component {
   handleSubmitButtonClick = () => {
     this.words.push(this.state.wordFormed);
     this.wordArray = [];
-    this.eventArray = [];
     this.setState(
       {wordsSubmitted: this.words}
     )
@@ -61,7 +56,7 @@ export default class Word extends Component {
   render() {
     return (
       <div>
-        <div id='display-current-word'> Your Current Word: <div id='current-word' value={this.state.wordFormed}>{this.state.wordFormed}</div> </div>
+        <div id='display-current-word'> <b><u>Your Current Word:</u></b> <div id='current-word' value={this.state.wordFormed}>{this.state.wordFormed}</div> </div>
         <div className='tile-container'>
           {this.tilesCreator()}
         </div>
