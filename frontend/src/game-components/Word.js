@@ -8,7 +8,7 @@ export default class Word extends Component {
     this.words = []
     this.state = {
       wordFormed: '',
-      wordsFormed: []
+      wordsSubmitted: []
     }
   }
 
@@ -45,8 +45,12 @@ export default class Word extends Component {
     this.words.push(this.state.wordFormed);
     this.wordArray = [];
     this.setState(
-      {wordsFormed: this.words}
+      {wordsSubmitted: this.words}
     )
+  }
+
+  displaySubmittedWords = () => {
+    this.state.wordsSubmitted.map(submittedWord => <div>{submittedWord}</div>)
   }
 
   render() {
@@ -62,6 +66,11 @@ export default class Word extends Component {
           <button onClick={this.handleSubmitButtonClick}>Submit Word</button>
         </div>
         <div className='submitted-words'>
+          <div className='all-submitted-words'>
+          <b><u>All Submitted Words:</u></b>
+            {this.displaySubmittedWords()}
+          </div>
+
           <div className='correct-words'></div>
           <div className='incorrect-words'></div>
         </div>
@@ -73,7 +82,7 @@ export default class Word extends Component {
 
 /*  this.wordArray = [];
   this.setState(
-    {wordsFormed: this.words}
+    {wordsSubmitted: this.words}
   )
 }
 
