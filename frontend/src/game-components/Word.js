@@ -23,10 +23,6 @@ export default class Word extends Component {
     });
   }
 
-  submitButtonCreator() {
-    return (<br><br><div><button onClick={this.handleSubmitButtonClick}>Submit Word</button></div>)
-  }
-
   handleSubmitButtonClick = () => {
     return (this.words.push(this.state.wordFormed))
   }
@@ -34,15 +30,25 @@ export default class Word extends Component {
   render() {
     return (
       <div className='tile-container'>
-        {this.gameCreator()}
-        {this.submitButtonCreator()}
+        {this.tilesCreator()}
+        <br></br>
+        <br></br>
+        <div><button onClick={this.handleSubmitButtonClick}> Submit Word</button>
+        </div>
       </div>
     )
   }
 }
 
+
 /*  this.wordArray = [];
   this.setState(
     {wordsFormed: this.words}
   )
-}*/
+}
+
+submitButtonCreator() {
+  return (<br><br><div><button onClick={this.handleSubmitButtonClick}>Submit Word</button></div>)
+}
+
+*/
