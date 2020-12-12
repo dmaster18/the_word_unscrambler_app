@@ -23,6 +23,14 @@ export default class Word extends Component {
     });
   }
 
+  handleDeleteButtonClick = () => {
+    let currentWord = document.getElementById('current-word').innerText;
+    currentWord = currentWord.slice(0,-1);
+    this.setState(
+      {wordFormed: currentWord}
+    )
+  }
+
   handleSubmitButtonClick = () => {
     this.words.push(this.state.wordFormed);
     this.wordArray = [];
@@ -34,16 +42,17 @@ export default class Word extends Component {
   render() {
     return (
       <div>
-        <div className='current-word'> Your Current Word: {this.state.wordFormed} </div>
+        <div id='display-current-word'> Your Current Word: <div id='current-word' value={this.state.wordFormed}>{this.state.wordFormed}</div> </div>
         <div className='tile-container'>
           {this.tilesCreator()}
         </div>
         <div>
+          <button onClick={this.handleDeleteButtonClick}>Delete Letter</button>
           <button onClick={this.handleSubmitButtonClick}>Submit Word</button>
         </div>
         <div className='submitted-words'>
           <div className='correct-words'></div>
-          <div className='incorrect-words'</div>
+          <div className='incorrect-words'></div>
         </div>
       </div>
     )
