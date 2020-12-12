@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 export default class Word extends Component {
   constructor(props) {
     super(props)
-    this.word = []
+    this.wordArray = []
+    this.words = []
     this.state = {
       wordFormed: '',
       wordsFormed: []
@@ -16,16 +17,33 @@ export default class Word extends Component {
   }
 
   handleTileClick = (event) => {
-    this.word.push(event.target.value)
+    this.wordArray.push(event.target.value);
     this.setState({
-      wordFormed: this.word.join('')
+      wordFormed: this.wordArray.join('')
+    });
+  }
+
+  submitButtonCreator() {
+    return (<br><br><div><button onClick={this.handleSubmitButtonClick}>Submit Word</button></div>)
+  }
+
+  handleSubmitButtonClick = (event) => {
+    this.words.push(this.state.wordFormed)
+    this.wordArray = []
+    this.setState({
+      wordsFormed: this.words
     })
+  }
+
+  gameCreator = () => {
+    {this.tilesCreator()}
+    {this.submitButtonCreator()}
   }
 
   render() {
     return (
       <div className='tile-container'>
-        {this.tilesCreator()}
+        {this.gameCreator()}
       </div>
     )
   }
