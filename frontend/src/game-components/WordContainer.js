@@ -63,7 +63,7 @@ export default class WordContainer extends Component {
 
   shuffleWordName = () => {
     this.setState(
-      {randomLetters: this.shuffle(this.props.name)}
+      {randomLetters: this.props.name}
     )
   }
 
