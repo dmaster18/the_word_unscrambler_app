@@ -4,6 +4,11 @@ import React, { Component } from 'react';
 export default class Word extends Component {
   constructor(props) {
     super(props)
+    word = []
+    this.state = {
+      wordFormed: '',
+      wordsFormed: []
+    };
   }
 
   tilesContainerCreator = () => {
@@ -15,7 +20,14 @@ export default class Word extends Component {
   }
 
   tilesCreator = () => {
-    return (this.props.randomLetters).map(letter => <div className='tile'>{letter}</div>)
+    return (this.props.randomLetters).map(letter => <div className='tile'><button onClick={this.handleTileClick}>{letter}</button></div>)
+  }
+
+  handleTileClick() {
+    this.word.push(this.innerText)
+    this.setState({
+      this.word.join('')
+    })
   }
 
   render() {
