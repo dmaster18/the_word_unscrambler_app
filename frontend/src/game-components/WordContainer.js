@@ -58,10 +58,13 @@ export default class WordContainer extends Component {
     }
   }
 
+  shuffle(word) {
+    return word.split('').sort(() => Math.random() - 0.5)
+  }
+
   shuffleWordName = () => {
-    //let randomLetters = (this.props.title)//.split('').sort(() => Math.random() - 0.5)
     this.setState({
-      randomLetters: this.props.title
+      randomLetters: this.shuffle(this.props.title)
     })
   }
 
