@@ -28,11 +28,11 @@ export default class Word extends Component {
   }
 
   handleSubmitButtonClick = (event) => {
-    this.words.push(this.state.wordFormed)
-    this.wordArray = []
-    this.setState({
-      wordsFormed: this.words
-    })
+    this.words.push(this.wordArray.join(''));
+    this.wordArray = [];
+    this.setState(
+      {wordsFormed: this.words}
+    )
   }
 
   gameCreator = () => {
