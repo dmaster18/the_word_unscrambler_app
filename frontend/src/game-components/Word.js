@@ -23,11 +23,21 @@ export default class Word extends Component {
     });
   }
 
-  handleDeleteButtonClick = () => {
+  handleDeleteLetterButtonClick = () => {
     let currentWord = document.getElementById('current-word').innerText;
     currentWord = currentWord.slice(0,-1);
+    this.wordArray = currentWord.split('');
     this.setState(
-      {wordFormed: currentWord}
+      {wordFormed: this.wordArray.join('')}
+    )
+  }
+
+  handleDeleteWordButtonClick = () => {
+    let currentWord = document.getElementById('current-word').innerText;
+    currentWord = [];
+    this.wordArray = currentWord;
+    this.setState(
+      {wordFormed: this.wordArray.join('')}
     )
   }
 
@@ -46,8 +56,9 @@ export default class Word extends Component {
         <div className='tile-container'>
           {this.tilesCreator()}
         </div>
-        <div>
-          <button onClick={this.handleDeleteButtonClick}>Delete Letter</button>
+        <div className='buttons'>
+          <button onClick={this.handleDeleteLetterButtonClick}>Delete Last Letter</button>
+          <button onClick={this.handleDeleteWordButtonClick}>Delete Current Word</button>
           <button onClick={this.handleSubmitButtonClick}>Submit Word</button>
         </div>
         <div className='submitted-words'>
