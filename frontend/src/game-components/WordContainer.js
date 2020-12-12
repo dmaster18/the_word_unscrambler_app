@@ -5,7 +5,6 @@ export default class WordContainer extends Component {
 
   constructor(props) {
     super(props)
-
     this.state = {
       score: 0,
       randomLetters: []
@@ -58,18 +57,17 @@ export default class WordContainer extends Component {
     }
   }
 
-  shuffle(word) {
-    return word.split('').sort(() => Math.random() - 0.5)
+  shuffle(letters) {
+    return letters.split('').sort(() => Math.random() - 0.5);
   }
 
   shuffleWordName = () => {
-    this.setState({
-      randomLetters: this.shuffle(this.props.title)
-    })
+    this.setState(
+      {randomLetters: this.props.name}
+    )
   }
 
   componentDidMount() {
-    console.log(this.props.title)
     this.shuffleWordName();
   }
 
