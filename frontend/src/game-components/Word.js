@@ -4,14 +4,22 @@ import React, { Component } from 'react';
 export default class Word extends Component {
   constructor(props) {
     super(props)
-    /*this.state = {
+    this.word = []
+    this.state = {
       wordFormed: '',
       wordsFormed: []
-    };*/
+    }
   }
 
   tilesCreator() {
-    return (this.props.randomLetters).map(letter => <div className='tile'>{letter}</div>)
+    return (this.props.randomLetters).map(letter => <div className='tile'><button onClick={this.handleTileClick} value={letter}>{letter}</button></div>)
+  }
+
+  handleTileClick = (event) => {
+    this.word.push(event.target.value)
+    this.setState({
+      wordFormed: this.word.join('')
+    })
   }
 
   render() {
@@ -22,12 +30,3 @@ export default class Word extends Component {
     )
   }
 }
-
-/*<button onClick={this.handleTileClick}>*/
-/*</button>*/
-  /*handleTileClick() {
-    this.word.push(this.innerText)
-    this.setState({
-      wordFormed: this.word.join('')
-    })
-  }*/
