@@ -50,7 +50,7 @@ export default class Word extends Component {
   }
 
   displaySubmittedWords = () => {
-    this.state.wordsSubmitted.map(submittedWord => <div>{submittedWord}</div>)
+    return this.state.wordsSubmitted.map((submittedWord, index) => <div>{index +1}. {submittedWord}</div>)
   }
 
   render() {
