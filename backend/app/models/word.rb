@@ -18,14 +18,14 @@ class Word < ApplicationRecord
   end
 
   def sanitize_all_words
-    sanitize(self.two_letter_words)
-    sanitize(self.three_letter_words)
-    sanitize(self.four_letter_words)
-    sanitize(self.five_letter_words)
-    sanitize(self.six_letter_words)
-    sanitize(self.seven_letter_words)
-    sanitize(self.eight_letter_words)
-    sanitize(self.nine_letter_words)
+    self.two_letter_words = sanitize(self.two_letter_words)
+    self.three_letter_words = sanitize(self.three_letter_words)
+    self.four_letter_words = sanitize(self.four_letter_words)
+    self.five_letter_words = sanitize(self.five_letter_words)
+    self.six_letter_words = sanitize(self.six_letter_words)
+    self.seven_letter_words = sanitize(self.seven_letter_words)
+    self.eight_letter_words = sanitize(self.eight_letter_words)
+    self.nine_letter_words = sanitize(self.nine_letter_words)
     self
   end
 
