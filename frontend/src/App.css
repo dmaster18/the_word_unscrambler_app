@@ -69,3 +69,9 @@ div.tile-container {
   #current-word {
     text-transform: uppercase;
   }
+
+  .warning {
+    font-weight: bold;
+    text-decoration: underline;
+    color: red;
+  }

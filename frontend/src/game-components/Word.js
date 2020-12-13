@@ -8,6 +8,7 @@ export default class Word extends Component {
     this.wordArray = []
     this.words = []
     this.state = {
+      warning: null,
       wordFormed: '',
       wordsSubmitted: []
     }
@@ -18,6 +19,9 @@ export default class Word extends Component {
   }
 
   handleTileClick = (event) => {
+      this.setState({
+          warning: null
+        });
       if (!this.eventIDArray.includes(event.target.id)){
         this.eventIDArray.push(event.target.id);
         this.wordArray.push(event.target.value);
@@ -25,14 +29,21 @@ export default class Word extends Component {
           wordFormed: this.wordArray.join('')
         });
       }
+      else {
+        this.setState({
+            warning: <div>CAN'T USE SAME TILE TWICE IN ONE WORD!</div>
+          })
+        return this.state.warning;
+      }
   }
 
   handleDeleteLetterButtonClick = () => {
     let currentWord = document.getElementById('current-word').innerText;
     currentWord = currentWord.slice(0,-1);
     this.wordArray = currentWord.split('');
+    this.eventIDArray.pop();
     this.setState(
-      {wordFormed: this.wordArray.join('')}
+      {wordFormed: this.wordArray.join(''), warning: null}
     )
   }
 
@@ -40,8 +51,9 @@ export default class Word extends Component {
     let currentWord = document.getElementById('current-word').innerText;
     currentWord = [];
     this.wordArray = currentWord;
+    this.eventIDArray = [];
     this.setState(
-      {wordFormed: this.wordArray.join('')}
+      {wordFormed: this.wordArray.join(''), warning: null}
     )
   }
 
@@ -51,7 +63,7 @@ export default class Word extends Component {
     this.wordArray = [];
     this.eventIDArray = [];
     this.setState(
-      {wordsSubmitted: this.words}
+      {wordsSubmitted: this.words, warning: null}
     )
   }
 
@@ -65,6 +77,9 @@ export default class Word extends Component {
         <div id='display-current-word'> <span>Your Current Word: </span><div id='current-word' value={this.state.wordFormed}>{this.state.wordFormed}</div> </div>
         <div className='score'>
           Your Current Score: {this.props.score} Points
+        </div>
+        <div className='warning'>
+          {this.state.warning}
         </div>
         <div className='tile-container'>
           {this.tilesCreator()}
