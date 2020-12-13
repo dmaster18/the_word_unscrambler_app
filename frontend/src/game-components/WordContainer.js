@@ -20,6 +20,7 @@ export default class WordContainer extends Component {
  }
 
   evaluateWord = (userInput) => {
+    userInput = userInput.toUpperCase()
     if ((this.props.allWords).includes(userInput)){
       this.setState({
        correctWords: [...this.state.correctWords, userInput]

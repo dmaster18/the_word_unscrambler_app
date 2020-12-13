@@ -58,8 +58,8 @@ export default class Word extends Component {
   }
 
   handleSubmitButtonClick = () => {
-    this.words.push(this.state.wordFormed);
-    this.props.evaluateWord(this.state.wordFormed);
+    this.words.push(this.state.wordFormed.toUpperCase());
+    this.props.evaluateWord(this.state.wordFormed.toUpperCase());
     this.wordArray = [];
     this.eventIDArray = [];
     this.setState(
