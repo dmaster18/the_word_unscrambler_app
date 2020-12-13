@@ -1,4 +1,5 @@
 class Word < ApplicationRecord
+
   before_save :all_words, :two_letter_words, :three_letter_words, :four_letter_words, :five_letter_words, :six_letter_words, :seven_letter_words, :eight_letter_words, :nine_letter_words, :sanitize_all_words
 
   serialize :two_letter_words, Array
@@ -37,8 +38,7 @@ class Word < ApplicationRecord
     all_words << seven_letter_words
     all_words << eight_letter_words
     all_words << nine_letter_words
-    all_words.flatten.flatten
-    self.all_words = all_words
+    self.all_words = all_words.flatten
   end
 
 end
