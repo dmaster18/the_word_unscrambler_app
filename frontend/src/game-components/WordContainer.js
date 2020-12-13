@@ -7,73 +7,34 @@ export default class WordContainer extends Component {
     super(props)
     this.state = {
       score: 0,
-      randomLetters: []
+      correctWords: [],
+      incorrectWords: []
     };
   }
 
   increment = (userInput) => {
     const newScore = this.state.score + userInput.length
     this.setState({
-     count: newScore
+     score: newScore
     })
  }
 
-  checkForWord(wordList, userInput) {
-    if (wordList.includes(userInput)){
-      this.response = 'Correct'
+  evaluateWord = (userInput) => {
+    if ((this.props.allWords).includes(userInput)){
+      this.setState({
+       correctWords: [...this.state.correctWords, userInput]
+      })
       this.increment(userInput);
     } else {
-      this.response = 'Incorrect'
+        this.setState({
+          incorrectWords: [...this.state.incorrectWords, userInput]
+      })
     }
-  }
-
-  evaluateResponse(userInput) {
-    let userInputLength = userInput.length;
-    switch(userInputLength) {
-      case 2:
-        this.checkforWord(this.props.twoLetterWords, userInput);
-        break;
-      case 3:
-        this.checkforWord(this.props.threeLetterWords, userInput);
-        break;
-      case 4:
-        this.checkforWord(this.props.fourLetterWords, userInput);
-        break;
-      case 5:
-        this.checkforWord(this.props.fiveLetterWords, userInput);
-        break;
-      case 6:
-        this.checkforWord(this.props.sixLetterWords, userInput);
-        break;
-      case 7:
-        this.checkforWord(this.props.sevenLetterWords, userInput);
-        break;
-      case 8:
-        this.checkforWord(this.props.eightLetterWords, userInput);
-        break;
-      case 9:
-        this.checkforWord(this.props.nineLetterWords, userInput);
-        break;
-    }
-  }
-
-  shuffle(letters) {
-    return letters.split('').sort(() => Math.random() - 0.5);
-  }
-
-  shuffleWordName = () => {
-    this.setState(
-      {randomLetters: this.props.name}
-    )
-  }
-
-  componentDidMount() {
-    this.shuffleWordName();
   }
 
   render() {
     return (
-      <Word randomLetters={this.state.randomLetters}/>
+      <Word letterArray={this.props.letterArray} evaluateWord={this.evaluateWord}/>
     )
   }
 }
