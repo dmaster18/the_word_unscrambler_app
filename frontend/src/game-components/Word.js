@@ -50,8 +50,8 @@ export default class Word extends Component {
     )
   }
 
-  displaySubmittedWords = () => {
-    return this.state.wordsSubmitted.map((submittedWord, index) => <div>{index +1}. {submittedWord}</div>)
+  displaySubmittedWords = (words) => {
+    return words.map((submittedWord, index) => <div>{index +1}. {submittedWord}</div>)
   }
 
   render() {
@@ -69,13 +69,15 @@ export default class Word extends Component {
         <div className='submitted-words'>
           <div className='all-submitted-words'>
             <b><u>All Submitted Words:</u></b>
-            {this.displaySubmittedWords()}
+            {this.displaySubmittedWords(this.state.wordsSubmitted)}
           </div>
           <div className='correct-words'>
             <b><u>Correct Words</u></b>
+            {this.displaySubmittedWords(this.props.correctWords)}
           </div>
           <div className='incorrect-words'></div>
             <b><u>Incorrect Words</u></b>
+            {this.displaySubmittedWords(this.props.incorrectWords)}
         </div>
       </div>
     )
