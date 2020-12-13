@@ -67,11 +67,14 @@ export default class Word extends Component {
         </div>
         <div className='submitted-words'>
           <div className='all-submitted-words'>
-          <b><u>All Submitted Words:</u></b>
+            <b><u>All Submitted Words:</u></b>
             {this.displaySubmittedWords()}
           </div>
-          <div className='correct-words'></div>
+          <div className='correct-words'>
+            <b><u>Correct Words</u></b>
+          </div>
           <div className='incorrect-words'></div>
+            <b><u>Incorrect Words</u></b>
         </div>
       </div>
     )
