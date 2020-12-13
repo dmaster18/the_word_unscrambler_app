@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 export default class Word extends Component {
   constructor(props) {
     super(props)
+    this.eventIDArray = []
     this.wordArray = []
     this.words = []
     this.state = {
@@ -17,10 +18,13 @@ export default class Word extends Component {
   }
 
   handleTileClick = (event) => {
-      this.wordArray.push(event.target.value);
-      this.setState({
-        wordFormed: this.wordArray.join('')
-      });
+      if (!this.eventIDArray.includes(event.target.id)){
+        this.eventIDArray.push(event.target.id);
+        this.wordArray.push(event.target.value);
+        this.setState({
+          wordFormed: this.wordArray.join('')
+        });
+      }
   }
 
   handleDeleteLetterButtonClick = () => {
@@ -45,6 +49,7 @@ export default class Word extends Component {
     this.words.push(this.state.wordFormed);
     this.props.evaluateWord(this.state.wordFormed);
     this.wordArray = [];
+    this.eventIDArray = [];
     this.setState(
       {wordsSubmitted: this.words}
     )
