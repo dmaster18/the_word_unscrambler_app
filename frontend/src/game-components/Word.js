@@ -83,16 +83,3 @@ export default class Word extends Component {
     )
   }
 }
-
-
-/*  this.wordArray = [];
-  this.setState(
-    {wordsSubmitted: this.words}
-  )
-}
-
-submitButtonCreator() {
-  return (<br><br><div><button onClick={this.handleSubmitButtonClick}>Submit Word</button></div>)
-}
-
-*/
