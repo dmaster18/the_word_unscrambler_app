@@ -13,11 +13,11 @@ export default class Word extends Component {
   }
 
   tilesCreator() {
-    return ("activized".split("")/*this.props.randomLetters*/).map((letter, index) => <div className='tile' value={index}><button onClick={this.handleTileClick} value={letter}>{letter}</button></div>)
+    return (this.props.letterArray).map((letter, index) => <button onClick={this.handleTileClick} value={letter} className='tile'id={index} key={`${letter}${index}`}>{letter}</button>)
   }
 
   handleTileClick = (event) => {
-      this.wordArray.push(event.target.innerText);
+      this.wordArray.push(event.target.value);
       this.setState({
         wordFormed: this.wordArray.join('')
       });
@@ -43,6 +43,7 @@ export default class Word extends Component {
 
   handleSubmitButtonClick = () => {
     this.words.push(this.state.wordFormed);
+    this.props.evaluateWord(this.state.wordFormed);
     this.wordArray = [];
     this.setState(
       {wordsSubmitted: this.words}
@@ -56,7 +57,7 @@ export default class Word extends Component {
   render() {
     return (
       <div>
-        <div id='display-current-word'> <b><u>Your Current Word:</u></b> <div id='current-word' value={this.state.wordFormed}>{this.state.wordFormed}</div> </div>
+        <div id='display-current-word'> <span>Your Current Word: </span><div id='current-word' value={this.state.wordFormed}>{this.state.wordFormed}</div> </div>
         <div className='tile-container'>
           {this.tilesCreator()}
         </div>
