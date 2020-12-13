@@ -34,7 +34,7 @@ export default class WordContainer extends Component {
 
   render() {
     return (
-      <Word letterArray={this.props.letterArray} evaluateWord={this.evaluateWord} correctWords={this.state.correctWords} incorrectWords={this.state.incorrectWords}/>
+      <Word letterArray={this.props.letterArray} evaluateWord={this.evaluateWord} correctWords={this.state.correctWords} incorrectWords={this.state.incorrectWords} score={this.state.score}/>
     )
   }
 }

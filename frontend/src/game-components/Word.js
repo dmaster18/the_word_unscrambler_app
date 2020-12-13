@@ -58,6 +58,9 @@ export default class Word extends Component {
     return (
       <div>
         <div id='display-current-word'> <span>Your Current Word: </span><div id='current-word' value={this.state.wordFormed}>{this.state.wordFormed}</div> </div>
+        <div className='score'>
+          Your Current Score: {this.props.score} Points
+        </div>
         <div className='tile-container'>
           {this.tilesCreator()}
         </div>
