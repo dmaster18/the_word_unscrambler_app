@@ -13,7 +13,8 @@ class Word < ApplicationRecord
 
   def sanitize(word_array)
     word_array.delete_if{|word| word == "" || word == nil}
-    word_array
+    capitalized_word_array = word_array.map{|word| word.upcase}
+    capitalized_word_array
   end
 
   def sanitize_all_words
