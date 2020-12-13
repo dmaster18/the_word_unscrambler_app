@@ -57,17 +57,12 @@ div.tile-container {
     height: 40px;
     text-align: center;
     font-weight: bold;
-    text-transform: uppercase;
     border-radius: 9px;
   }
 
   #display-current-word span{
     font-weight: bold;
     text-decoration: underline;
-  }
-
-  #current-word {
-    text-transform: uppercase;
   }
 
   .warning {
