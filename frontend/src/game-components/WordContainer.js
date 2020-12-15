@@ -27,7 +27,7 @@ export default class WordContainer extends Component {
       })
       this.increment(userInput);
     } else {
-        this.setState({
+        this.setState({ 
           incorrectWords: [...this.state.incorrectWords, userInput]
       })
     }
