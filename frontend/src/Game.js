@@ -15,13 +15,11 @@ export default class Game extends Component {
   }
 
   fetchWords() {
-    const words_url = `http://127.0.0.1:3000/words/3`;
+    const words_url = `http://127.0.0.1:3000/words?limit=10`;
     return fetch(words_url).then(resp => resp.json());
   }
 
-/*  renderWords() {
-    this.fetchWords().then(json => {this.generateWords(json)})
-  }*/
+
 
   componentDidMount() {
     this.fetchWords().then(json => {
