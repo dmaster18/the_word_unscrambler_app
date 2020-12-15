@@ -26,6 +26,7 @@ export default class Game extends Component {
   }
 
   renderWord(i, json) {
+    if this.questionCompleted
     return json[i]
 
     i+=1;
