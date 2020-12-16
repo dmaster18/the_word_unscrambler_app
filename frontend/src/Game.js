@@ -14,12 +14,13 @@ export default class Game extends Component {
     this.state = {
       i: 0,
       gameInfo: {},
-      wordSession: {}
+      wordSession: {},
+      nextWord: 'Next Letter Set'
     }
   }
 
   fetchWords() {
-    const words_url = 'http://127.0.0.1:3000/words/?limit=10';
+    const words_url = 'http://127.0.0.1:3000/words/?limit=15';
     return fetch(words_url).then(resp => resp.json());
   }
 
@@ -52,13 +53,21 @@ export default class Game extends Component {
   }
 
   nextWord = () => {
-    this.i +=1
-    let newWordSession = this.state.gameInfo.data[this.i].attributes
-    this.setState(
-      {i: this.i,
-      wordSession: newWordSession}
-    )
+    if (this.i <= (this.state.gameInfo.length - 1)){
+      this.i +=1
+      let newWordSession = this.state.gameInfo.data[this.i].attributes
+      this.setState(
+        {i: this.i,
+          wordSession: newWordSession}
+        )
+    } else {
+      this.setState(
+        {nextWord: 'View Score'}
+        )
+    }
   }
+
+
 
 
   render() {
@@ -67,7 +76,8 @@ export default class Game extends Component {
       {this.state.wordSession.name &&
         <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words}/>
       }
-      <button onClick={this.nextWord}>Next Word</button>
+
+        <button onClick={this.nextWord}>{this.state.nextWord}</button>
       </div>
     )
   }
