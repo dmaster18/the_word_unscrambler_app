@@ -17,19 +17,19 @@ export default class Game extends Component {
   }
 
   fetchWords() {
-    const words_url = `http://127.0.0.1:3000/words`;
+    const words_url = 'http://127.0.0.1:3000/words';
     return fetch(words_url).then(resp => resp.json());
   }
 
   initiateGame() {
-    return this.fetchWords().then(json => this.renderWord(json));
+    return this.fetchWords().then(words => this.renderWord(words));
   }
 
   /*if this.questionCompleted*/
 /*    this.i+=1;*/
 
-  renderWord(json) {
-    return json[this.i].data.attributes
+  renderWord(words) {
+    return words.data[this.i].attributes.name
   }
 
 
