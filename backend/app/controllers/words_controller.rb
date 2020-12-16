@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
   def index
-    words = Word.all
+    words = Word.limit(params[:limit] || 15)
     options = {
       include: []
     }
