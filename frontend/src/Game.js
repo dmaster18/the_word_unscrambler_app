@@ -12,6 +12,7 @@ export default class Game extends Component {
     this.i = 0
     this.questionCompleted = false
     this.state = {
+      score: 0,
       i: 0,
       gameInfo: {},
       wordSession: {},
@@ -60,7 +61,11 @@ export default class Game extends Component {
         {i: this.i,
           wordSession: newWordSession}
         )
-    } else {
+    } else if (this.state.nextText === 'View Score') {
+      document.getElementById('game').innerText = `Your Final Score is ${this.state.score}`
+    }
+
+    else {
       this.setState(
         {nextText: 'View Score'}
         )
@@ -72,7 +77,7 @@ export default class Game extends Component {
     return (
       <div id="game">
       {this.state.wordSession.name &&
-        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words}/>
+        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score}/>
       }
 
         <button onClick={this.next}>{this.state.nextText}</button>

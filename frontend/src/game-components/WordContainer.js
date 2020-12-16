@@ -6,7 +6,7 @@ export default class WordContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      score: 0,
+      score: this.props.score,
       correctWords: [],
       incorrectWords: []
     };
@@ -27,7 +27,7 @@ export default class WordContainer extends Component {
       })
       this.increment(userInput);
     } else {
-        this.setState({ 
+        this.setState({
           incorrectWords: [...this.state.incorrectWords, userInput]
       })
     }
