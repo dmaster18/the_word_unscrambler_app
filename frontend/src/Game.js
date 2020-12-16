@@ -22,17 +22,14 @@ export default class Game extends Component {
   }
 
   initiateGame() {
-    let i = 0;
     return this.fetchWords().then(json => this.renderWord(json));
   }
 
   /*if this.questionCompleted*/
+/*    this.i+=1;*/
 
   renderWord(json) {
-    return json[i]
-
-    i+=1;
-
+    return json[this.i]
   }
 
 
