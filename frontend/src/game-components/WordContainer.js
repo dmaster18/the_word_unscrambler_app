@@ -12,12 +12,12 @@ export default class WordContainer extends Component {
     };
   }
 
-  increment = (userInput) => {
+/*  increment = (userInput) => {
     const newScore = this.state.score + userInput.length
     this.setState({
      score: newScore
     })
- }
+ } */
 
   evaluateWord = (userInput) => {
     userInput = userInput.toUpperCase()
@@ -25,7 +25,7 @@ export default class WordContainer extends Component {
       this.setState({
        correctWords: [...this.state.correctWords, userInput]
       })
-      this.increment(userInput);
+      this.props.increment(userInput);
     } else {
         this.setState({
           incorrectWords: [...this.state.incorrectWords, userInput]

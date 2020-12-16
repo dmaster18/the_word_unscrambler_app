@@ -44,11 +44,6 @@ export default class Game extends Component {
     )})
   }
 
-  //generateWord() {
-    //<WordContainer name={this.state.wordSession.name} twoLetterWords={this.state.wordSession.two_letter_words} threeLetterWords={this.state.wordSession.three_letter_words} fourLetterWords={this.state.wordSession.four_letter_words} fiveLetterWords={this.state.wordSession.five_letter_words} sixLetterWords={this.state.wordSession.six_letter_words} sevenLetterWords={this.state.wordSession.seven_letter_words} eightLetterWords={this.state.wordSession.eight_letter_words} nineLetterWords={this.state.wordSession.nine_letter_words} />
-    //json.data.map(word => {
-    //  <WordContainer name={word.name} twoLetterWords={word.two_letter_words} threeLetterWords={word.three_letter_words} fourLetterWords={word.four_letter_words} fiveLetterWords={word.five_letter_words} sixLetterWords={word.six_letter_words} sevenLetterWords={word.seven_letter_words} eightLetterWords={word.eight_letter_words} nineLetterWords={word.nine_letter_words} />
-    //})
   shuffle(letters) {
     return letters.split('').sort(() => Math.random() - 0.5);
   }
@@ -62,9 +57,11 @@ export default class Game extends Component {
           wordSession: newWordSession}
         )
     } else if (this.state.nextText === 'View Score') {
-      document.getElementById('game').innerText = `Your Final Score is ${this.state.score}`
-    }
+      let gameElement = document.getElementById('game')
+      gameElement.innerHTML= `<div>Your Final Score is ${this.state.score} Points!</div><br><br><button>View Leaderboard</button>`
 
+
+    }
     else {
       this.setState(
         {nextText: 'View Score'}
@@ -72,14 +69,20 @@ export default class Game extends Component {
     }
   }
 
+  increment = (userInput) => {
+    const newScore = this.state.score + userInput.length
+    this.setState({
+     score: newScore
+    })
+ }
+
 
   render() {
     return (
       <div id="game">
       {this.state.wordSession.name &&
-        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score}/>
+        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
       }
-
         <button onClick={this.next}>{this.state.nextText}</button>
       </div>
     )
