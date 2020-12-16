@@ -29,7 +29,7 @@ export default class Game extends Component {
 /*    this.i+=1;*/
 
   renderWord(json) {
-    return json[this.i]
+    return json[this.i].data.attributes
   }
 
 
@@ -47,13 +47,13 @@ export default class Game extends Component {
     //})
   shuffle(letters) {
       return letters.split('').sort(() => Math.random() - 0.5);
-    }
+  }
 
 
   render() {
     return (
       <div id="game">
-        {this.initiateGame();}
+        {this.initiateGame()}
       </div>
     )
   }
