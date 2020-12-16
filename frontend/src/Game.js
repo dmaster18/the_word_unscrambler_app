@@ -9,6 +9,7 @@ import LeaderBoard from './game-components/LeaderBoard.js'
 export default class Game extends Component {
   constructor(props) {
     super(props)
+    this.i = 0
     this.questionCompleted = false
     this.state = {
       gameInfo: {}
@@ -22,13 +23,12 @@ export default class Game extends Component {
 
   initiateGame() {
     let i = 0;
-    return this.fetchWords().then(json => this.renderWord(i, json));
+    return this.fetchWords().then(json => this.renderWord(json));
   }
 
   /*if this.questionCompleted*/
 
-  renderWord(i, json) {
-
+  renderWord(json) {
     return json[i]
 
     i+=1;
