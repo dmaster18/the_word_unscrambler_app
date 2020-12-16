@@ -29,11 +29,9 @@ export default class Game extends Component {
     return this.fetchWords().then(words => this.renderWord(words));
   }
 
-
   renderWord = (words) => {
     return console.log(words.data[this.i].attributes.name)
   }
-
 
   componentDidMount() {
     this.fetchWords().then(json => {
@@ -60,7 +58,6 @@ export default class Game extends Component {
       let gameElement = document.getElementById('game')
       gameElement.innerHTML= `<div>Your Final Score is ${this.state.score} Points!</div><br><br><button>View Leaderboard</button>`
 
-
     }
     else {
       this.setState(
@@ -76,12 +73,14 @@ export default class Game extends Component {
     })
  }
 
-
   render() {
     return (
       <div id="game">
       {this.state.wordSession.name &&
+        <>
         <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
+
+        </>
       }
         <button onClick={this.next}>{this.state.nextText}</button>
       </div>
