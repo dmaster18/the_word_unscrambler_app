@@ -9,6 +9,7 @@ import LeaderBoard from './game-components/LeaderBoard.js'
 export default class Game extends Component {
   constructor(props) {
     super(props)
+    this.i = 0
     this.questionCompleted = false
     this.state = {
       i: 0,
@@ -26,10 +27,8 @@ export default class Game extends Component {
     return this.fetchWords().then(words => this.renderWord(words));
   }
 
-  /*if this.questionCompleted*/
-/*    this.i+=1;*/
 
-  renderWord(words) {
+  renderWord = (words) => {
     return console.log(words.data[this.i].attributes.name)
   }
 
@@ -52,9 +51,12 @@ export default class Game extends Component {
     return letters.split('').sort(() => Math.random() - 0.5);
   }
 
-  nextWord() {
+  nextWord = () => {
+    this.i +=1
+    let newWordSession = this.state.gameInfo.data[this.i].attributes
     this.setState(
-      {i: this.state.i+=1}
+      {i: this.i,
+      wordSession: newWordSession}
     )
   }
 
@@ -63,8 +65,9 @@ export default class Game extends Component {
     return (
       <div id="game">
       {this.state.wordSession.name &&
-        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} nextWord={this.nextWord}/>
+        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words}/>
       }
+      <button onClick={this.nextWord}>Next Word</button>
       </div>
     )
   }
