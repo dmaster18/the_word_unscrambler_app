@@ -25,8 +25,10 @@ export default class Game extends Component {
     return this.fetchWords().then(json => this.renderWord(i, json));
   }
 
+  /*if this.questionCompleted*/
+
   renderWord(i, json) {
-    if this.questionCompleted
+
     return json[i]
 
     i+=1;
