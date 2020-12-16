@@ -9,9 +9,9 @@ import LeaderBoard from './game-components/LeaderBoard.js'
 export default class Game extends Component {
   constructor(props) {
     super(props)
-    this.i = 0
     this.questionCompleted = false
     this.state = {
+      i: 0,
       gameInfo: {},
       wordSession: {}
     }
@@ -38,7 +38,7 @@ export default class Game extends Component {
     this.fetchWords().then(json => {
     this.setState(
       {gameInfo: json,
-      wordSession: json.data[this.i].attributes
+      wordSession: json.data[this.state.i].attributes
       }
     )})
   }
@@ -49,7 +49,13 @@ export default class Game extends Component {
     //  <WordContainer name={word.name} twoLetterWords={word.two_letter_words} threeLetterWords={word.three_letter_words} fourLetterWords={word.four_letter_words} fiveLetterWords={word.five_letter_words} sixLetterWords={word.six_letter_words} sevenLetterWords={word.seven_letter_words} eightLetterWords={word.eight_letter_words} nineLetterWords={word.nine_letter_words} />
     //})
   shuffle(letters) {
-      return letters.split('').sort(() => Math.random() - 0.5);
+    return letters.split('').sort(() => Math.random() - 0.5);
+  }
+
+  nextWord() {
+    this.setState(
+      {i: this.state.i+=1}
+    )
   }
 
 
@@ -57,7 +63,7 @@ export default class Game extends Component {
     return (
       <div id="game">
       {this.state.wordSession.name &&
-        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words}/>
+        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} nextWord={this.nextWord}/>
       }
       </div>
     )
