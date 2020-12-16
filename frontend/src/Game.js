@@ -12,12 +12,13 @@ export default class Game extends Component {
     this.i = 0
     this.questionCompleted = false
     this.state = {
-      gameInfo: {}
+      gameInfo: {},
+      wordSession: {}
     }
   }
 
   fetchWords() {
-    const words_url = 'http://127.0.0.1:3000/words/limit?=10';
+    const words_url = 'http://127.0.0.1:3000/words/?limit=10';
     return fetch(words_url).then(resp => resp.json());
   }
 
@@ -34,10 +35,10 @@ export default class Game extends Component {
 
 
   componentDidMount() {
-    this.fetchWords().then(words => {
+    this.fetchWords().then(json => {
     this.setState(
-      {gameInfo: words.data,
-      wordSession: words.data[this.i].attributes
+      {gameInfo: json,
+      wordSession: json.data[this.i].attributes
       }
     )})
   }
@@ -55,7 +56,7 @@ export default class Game extends Component {
   render() {
     return (
       <div id="game">
-        {console.log(this.state.wordSession.name)}
+        {console.log(this.state.wordSession)}
       </div>
     )
   }
