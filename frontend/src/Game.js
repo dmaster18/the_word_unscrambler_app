@@ -15,7 +15,7 @@ export default class Game extends Component {
       i: 0,
       gameInfo: {},
       wordSession: {},
-      nextWord: 'Next Letter Set'
+      nextText: 'Next Letter Set'
     }
   }
 
@@ -52,8 +52,8 @@ export default class Game extends Component {
     return letters.split('').sort(() => Math.random() - 0.5);
   }
 
-  nextWord = () => {
-    if (this.i <= (this.state.gameInfo.length - 1)){
+  next = () => {
+    if (this.i < (this.state.gameInfo.data.length - 1)){
       this.i +=1
       let newWordSession = this.state.gameInfo.data[this.i].attributes
       this.setState(
@@ -62,12 +62,10 @@ export default class Game extends Component {
         )
     } else {
       this.setState(
-        {nextWord: 'View Score'}
+        {nextText: 'View Score'}
         )
     }
   }
-
-
 
 
   render() {
@@ -77,7 +75,7 @@ export default class Game extends Component {
         <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words}/>
       }
 
-        <button onClick={this.nextWord}>{this.state.nextWord}</button>
+        <button onClick={this.next}>{this.state.nextText}</button>
       </div>
     )
   }
