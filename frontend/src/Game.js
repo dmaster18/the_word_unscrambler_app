@@ -55,7 +55,9 @@ export default class Game extends Component {
   render() {
     return (
       <div id="game">
-        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} />
+        {this.state.wordSession.name &&
+          <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words}/>
+        }
       </div>
     )
   }
