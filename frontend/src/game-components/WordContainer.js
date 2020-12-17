@@ -12,13 +12,6 @@ export default class WordContainer extends Component {
     };
   }
 
-/*  increment = (userInput) => {
-    const newScore = this.state.score + userInput.length
-    this.setState({
-     score: newScore
-    })
- } */
-
   evaluateWord = (userInput) => {
     userInput = userInput.toUpperCase()
     if ((this.props.allWords).includes(userInput) && !this.state.correctWords.includes(userInput)){
