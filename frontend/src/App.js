@@ -6,9 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="the-word-unscrambler">
-
       </header>
-
       <Game />
     </div>
   );
