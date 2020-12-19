@@ -5,15 +5,22 @@ import Game from './Game.js'
 
 
 function App() {
+  constructor(props) {
+    this.state = {
+      startGame: false
+    };
+  }
 
-  startGame = () => {return true}
+  startGame = () => {this.setState({initiateGame: true})}
+
   return (
     <div className="App">
       <header className="the-word-unscrambler">
       </header>
-      <button onClick={this.startGame}>Start Games</button>
-      if
-      <Game/>
+        <button onClick={this.startGame}>Start Game</button>
+        {if(this.state.initiateGame === true) {
+          <Game/>
+        }}
     </div>
   );
 }
