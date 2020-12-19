@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <a href='game.html'>Play Game</a>
+    <a href='leadboard.html'> View Leaderboard</a>
   </React.StrictMode>,
   document.getElementById('root')
 );
