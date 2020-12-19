@@ -7,16 +7,16 @@ import Game from './Game.js'
 function App() {
 
 
-  startGame = () => {<Game/>}
-
   return (
     <div className="App">
       <header className="the-word-unscrambler">
       </header>
-        <button onClick={this.startGame}>Start Game</button>
-
+      <Game/>
     </div>
   );
 }
+
+/*startGame = () => {<Game/>}
+<button onClick={this.startGame}>Start Game</button>*/
 
 export default App;
