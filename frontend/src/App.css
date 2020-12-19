@@ -75,3 +75,8 @@ div.tile-container {
     text-decoration: underline;
     color: red;
   }
+
+  #final-score {
+    font-size: large;
+
+  }

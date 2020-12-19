@@ -56,7 +56,7 @@ export default class Game extends Component {
         )
     } else if (this.state.nextText === 'View Score') {
       let gameElement = document.getElementById('game')
-      gameElement.innerHTML= `<div>Your Final Score is ${this.state.score} Points!</div><br><br><button>View Leaderboard</button>`
+      gameElement.innerHTML= `<div id='final-score'>Your Final Score is ${this.state.score} Points!</div><br><br><button>View Leaderboard</button>`
 
     }
     else {
