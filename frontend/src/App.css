@@ -77,6 +77,5 @@ div.tile-container {
   }
 
   #final-score {
-    font-size: large;
-
+    font-weight: bold
   }
