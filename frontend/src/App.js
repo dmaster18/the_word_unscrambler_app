@@ -9,8 +9,26 @@ function App() {
     <div className="App">
       <header className="the-word-unscrambler">
       </header>
-        <a href='game.html'>Play Game</a>
-        <a href='leadboard.html'> View Leaderboard</a>
+      <Router>
+        <nav>
+        <ul>
+          <li>
+            <Link to="/quickgame">Quick Game</Link>
+            </li>
+          <li>
+            <Link to="/game">Full Game</Link>
+          </li>
+          <li>
+            <Link to="/trainer">Word Trainer</Link>
+          </li>
+          <li>
+            <Link to="/leaderboard">Leaderboard</Link>
+          </li>
+        </ul>
+    </nav>
+      </Router>
+
+
       <Game/>
     </div>
   );
