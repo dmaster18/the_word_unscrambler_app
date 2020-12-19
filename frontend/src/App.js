@@ -5,8 +5,6 @@ import Game from './Game.js'
 
 
 function App() {
-
-
   return (
     <div className="App">
       <header className="the-word-unscrambler">

@@ -8,6 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <a href='game.html'>Play Game</a>
     <a href='leadboard.html'> View Leaderboard</a>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
