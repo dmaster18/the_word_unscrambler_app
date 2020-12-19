@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import Game from './Game.js'
-import React from 'react';
 
 
-export default class App extends Component {
+
+function App() {
+
+
   return (
-    <div className='App'>
-      <header className="the-word-unscrambler"></header>
+    <div className="App">
+      <header className="the-word-unscrambler">
+      </header>
       <Game/>
     </div>
   );
@@ -15,3 +18,5 @@ export default class App extends Component {
 
 /*startGame = () => {<Game/>}
 <button onClick={this.startGame}>Start Game</button>*/
+
+export default App;
