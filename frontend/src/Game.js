@@ -55,8 +55,7 @@ export default class Game extends Component {
         )
     } else if (this.state.nextText === 'View Score') {
       let gameElement = document.getElementById('game')
-      gameElement.innerHTML= `<h1 id='final-score'>Your Final Score is ${this.state.score} Points!</h1><br><br><button>View Leaderboard</button>`
-
+      gameElement.innerHTML= `<h1 id='final-score'>Your Final Score is ${this.state.score} Points!</h1><br><br><button onClick=${this.submitPlayerData}>Submit to Leaderboard</button>`
     }
     else {
       this.setState(
@@ -70,6 +69,20 @@ export default class Game extends Component {
     this.setState({
      score: newScore
     })
+ }
+
+ submitPlayerData () {
+   const leaderboardForm = document.createElement('div');
+   leaderboardForm.innerHTML = '<form><label for="player[name]">Enter your name:</label><input type="text" name="player[name]" id="player[name]"><input type="hidden" id="player[score]" name="player[score]"><input type="hidden" id="player[percentage]" name="player[percentage]"><button type="submit" value="Submit" id="form-submit-button">Submit</button></form>';
+   main.appendChild(leaderboardForm);
+   const formSubmitButton = document.getElementById('form-submit-button');
+   formSubmitButton.addEventListener('click', (event) => {
+     event.preventDefault();
+     const name = document.getElementById('user[name]').value;
+     const data = { player: { name, score: this.state.score} };
+     const usersURL = 'http://127.0.0.1:3000/players';
+     return fetch(usersURL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).then(() => { window.location.href = 'leaderboard.html'; });
+   });
  }
 
   render() {
