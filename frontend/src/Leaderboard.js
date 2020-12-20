@@ -15,8 +15,9 @@ export default class Leaderboard extends Component {
   }
 
   renderLeaderboardData() {
-    const arrayOfPlayerData = this.state.playerData.map(player => <tr><td>{player.attributes.name}</td> <td>{player.attributes.score} Points</td></tr>);
-    return arrayOfPlayerData;
+    const sortedPlayerData = this.state.playerData.sort(function (a, b) { return b.attributes.score - a.attributes.score });
+    const leaderboardData = sortedPlayerData.map(player => <tr><td>{player.attributes.name}</td> <td>{player.attributes.score} Points</td></tr>);
+    return leaderboardData;
   }
 
   componentDidMount() {
