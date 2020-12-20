@@ -109,7 +109,8 @@ export default class Game extends Component {
   render() {
     return (
       <div id="game">
-      {this.state.wordSession.name &&
+      <div id='timer'> {this.state.seconds} Seconds </div>
+      {this.state.wordSession.name && this.state.seconds <= 300 &&
         <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
       }
         <button onClick={this.next}>{this.state.nextText}</button>
