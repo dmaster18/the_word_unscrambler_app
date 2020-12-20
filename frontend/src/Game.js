@@ -23,8 +23,6 @@ export default class Game extends Component {
       i: 0,
       gameInfo: {},
       wordSession: {},
-      nextText: 'Next Letter Grouping',
-      seconds: 0,
       status: 'Loading'
     }
   }
@@ -113,7 +111,7 @@ handleComplete = () => {
             {this.state.wordSession.name &&
               <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
           }
-            {this.props.numberOfWords > 1 && (<button onClick={this.next}>{this.state.nextText}</button>)}
+            {this.props.numberOfWords > 1 && (<button onClick={this.next}>Next Letter Grouping</button>)}
           </div>
         )
         }
