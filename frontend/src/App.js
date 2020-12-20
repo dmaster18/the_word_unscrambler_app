@@ -20,13 +20,17 @@ function App() {
         <div>
         <Switch>
           <Route exact path="/">
-            <Link to="/game">Full Game</Link>
-            <br></br>
+            <Link to="/quick-game">Quick Game</Link>
+            <Link to="/full-game">Full Game</Link>
             <Link to="/leaderboard">Leaderboard</Link>
           </Route>
-          <Route exact path="/game">
-            <Game/>
+          <Route exact path="/quick-game">
+            <Game numberOfWords={1} gameDuration={1*60*1000}/>
           </Route>
+          <Route exact path="/full-game">
+            <Game numberOfWords={10} gameDuration={5*60*1000}/>
+          </Route>
+
           <Route exact path="/leaderboard">
             <Leaderboard/>
           </Route>

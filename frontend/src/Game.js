@@ -30,7 +30,7 @@ export default class Game extends Component {
   }
 
   fetchWords() {
-    const words_url = 'http://127.0.0.1:3000/words/?limit=15';
+    const words_url = `http://127.0.0.1:3000/words/?limit=${this.props.numberOfWords}`;
     return fetch(words_url).then(resp => resp.json());
   }
 
@@ -109,11 +109,11 @@ handleComplete = () => {
       case 'Running': {
         return (
           <div id="game">
-            {<Timer initialTime={this.state.initialTime} numberOfMilliseconds={0.5*1000*60} onComplete={this.handleComplete}/>}
+            {<Timer initialTime={this.state.initialTime} numberOfMilliseconds={this.props.gameDuration} onComplete={this.handleComplete}/>}
             {this.state.wordSession.name &&
               <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
           }
-            <button onClick={this.next}>{this.state.nextText}</button>
+            {this.props.numberOfWords > 1 && (<button onClick={this.next}>{this.state.nextText}</button>)}
           </div>
         )
         }
