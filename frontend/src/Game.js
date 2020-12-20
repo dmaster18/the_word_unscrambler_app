@@ -20,7 +20,8 @@ export default class Game extends Component {
       i: 0,
       gameInfo: {},
       wordSession: {},
-      nextText: 'Next Letter Set'
+      nextText: 'Next Letter Set',
+      seconds: 0
     }
   }
 
@@ -37,18 +38,17 @@ export default class Game extends Component {
     return console.log(words.data[this.i].attributes.name)
   }
 
-  componentDidMount() {
-    this.fetchWords().then(json => {
-    this.setState(
-      {gameInfo: json,
-      wordSession: json.data[this.state.i].attributes
-      }
-    )})
-  }
 
   shuffle(letters) {
     return letters.split('').sort(() => Math.random() - 0.5);
   }
+
+  createTimer = () => {
+    const timer = new Timer('test-timer');
+    return timer;
+  }
+
+
 
   next = () => {
     if (this.i < (this.state.gameInfo.data.length - 1)){
@@ -89,6 +89,15 @@ export default class Game extends Component {
      const playersURL = 'http://127.0.0.1:3000/players';
      return fetch(playersURL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).then(() => {console.log('hello')});
    });
+ }
+
+ componentDidMount() {
+   this.fetchWords().then(json => {
+   this.setState(
+     {gameInfo: json,
+     wordSession: json.data[this.state.i].attributes
+     }
+   )})
  }
 
   render() {
