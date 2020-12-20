@@ -24,32 +24,35 @@ function App() {
               <Link to="/game">Full Game</Link>
             </li>
 
-            <li>
-              <Link to="/leaderboard">Leaderboard</Link>
-            </li>
+
           </ul>
           </nav>
         <Switch>
-
           <Route path="/game">
-            <Game />
+            <Game/>
           </Route>
 
-          <Route path="/leaderboard">
-            <Leaderboard />
-          </Route>
        </Switch>
       </div>
-
     </Router>
-
-
-      <Game/>
     </div>
   );
 }
 
+
+
+
+
 /*
+
+<li>
+  <Link to="/leaderboard">Leaderboard</Link>
+</li>
+
+<Route path="/leaderboard">
+  <Leaderboard/>
+</Route>
+
 <li>
   <Link to="/quickgame">Quick Game</Link>
 </li>
