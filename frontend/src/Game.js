@@ -8,7 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Timer from 'timer-node'
+import Countdown from "react-countdown";
 
 export default class Game extends Component {
   constructor(props) {
@@ -41,11 +41,6 @@ export default class Game extends Component {
 
   shuffle(letters) {
     return letters.split('').sort(() => Math.random() - 0.5);
-  }
-
-  viewScore = () => {
-    let gameElement = document.getElementById('game')
-    gameElement.innerHTML= `<h1 id='final-score'>Your Final Score is ${this.state.score} Points!</h1><br><br><button onClick=${this.submitPlayerData}>Submit to Leaderboard</button>`
   }
 
   next = () => {
@@ -89,22 +84,34 @@ export default class Game extends Component {
  }
 
  componentDidMount() {
-   const timer = new Timer('test-timer');
-   timer.start();
    this.fetchWords().then(json => {
    this.setState(
      {gameInfo: json,
-     wordSession: json.data[this.state.i].attributes,
-     seconds:timer.seconds()
+     wordSession: json.data[this.state.i].attributes
      }
    )})
  }
 
+ viewScore = () => <><h1 id='final-score'>Your Final Score is {this.state.score} Points!</h1><button onClick={this.submitPlayerData}>Submit to Leaderboard</button></>
+
+
+ // Renderer callback with condition
+renderer = ({ minutes, seconds, completed }) => {
+   if (completed) {
+     // Render a completed state
+     return this.viewScore();
+   } else {
+     // Render a countdown
+     return <span>{minutes}:{seconds}</span>;
+   }
+ };
+
+
   render() {
     return (
       <div id="game">
-      <div id='timer'> {this.state.seconds} Seconds </div>
-      {this.state.wordSession.name && this.state.seconds <= 300 &&
+        <div id='countdown'> <Countdown date={Date.now() + 0.5*60*1000} renderer={this.renderer}/> </div>
+        {this.state.wordSession.name && this.state.seconds <= 300 &&
         <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
       }
         <button onClick={this.next}>{this.state.nextText}</button>
