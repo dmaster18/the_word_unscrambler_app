@@ -13,6 +13,7 @@ import Countdown from "react-countdown";
 export default class Game extends Component {
   constructor(props) {
     super(props)
+    this.initialTime = Date.now()
     this.i = 0
     this.questionCompleted = false
     this.state = {
@@ -21,7 +22,7 @@ export default class Game extends Component {
       gameInfo: {},
       wordSession: {},
       nextText: 'Next Letter Grouping',
-      seconds: 0
+      seconds: 0,
     }
   }
 
@@ -86,10 +87,12 @@ export default class Game extends Component {
  componentDidMount() {
    this.fetchWords().then(json => {
    this.setState(
-     {gameInfo: json,
-     wordSession: json.data[this.state.i].attributes
+     { gameInfo: json,
+     wordSession: json.data[this.state.i].attributes,
+     initialTime: Date.now()
      }
-   )})
+   )
+  })
  }
 
  viewScore = () => <><h1 id='final-score'>Your Final Score is {this.state.score} Points!</h1><button onClick={this.submitPlayerData}>Submit to Leaderboard</button></>
@@ -110,9 +113,9 @@ renderer = ({ minutes, seconds, completed }) => {
   render() {
     return (
       <div id="game">
-        <div id='countdown'> <Countdown date={Date.now() + 0.5*60*1000} renderer={this.renderer}/> </div>
-        {this.state.wordSession.name && this.state.seconds <= 300 &&
-        <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
+        {this.state.initialTime && <div id='countdown'> <Countdown date={this.initialTime + 0.5*60*1000} renderer={this.renderer}/> </div>}
+        {this.state.wordSession.name &&
+          <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
       }
         <button onClick={this.next}>{this.state.nextText}</button>
       </div>
