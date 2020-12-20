@@ -8,12 +8,9 @@ export default class Leaderboard extends Component {
     }
   }
 
-  fetchplayers () {
+  fetchPlayers () {
     const playersURL = 'http://127.0.0.1:3000/players';
     const playerData = fetch(playersURL).then(resp => resp.json());
-    this.setState(
-      {playerData: playerData}
-    )
   }
 
   renderLeaderboard () {
@@ -22,6 +19,14 @@ export default class Leaderboard extends Component {
     const leaderboardData = arrayOfPlayerData.join(' ');
     const leaderboardHTML =  `${leaderboardHeader} ${leaderboardData}`;
     return leaderboardHTML;
+  }
+
+  componentDidMount() {
+    this.fetchPlayers().then(json => {
+    this.setState(
+      {playerData: json,
+      }
+    )})
   }
 
   render () {
