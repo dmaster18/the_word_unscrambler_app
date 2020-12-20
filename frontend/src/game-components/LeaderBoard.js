@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class LeaderBoard extends Component {
+export default class Leaderboard extends Component {
 
   render() {
     return null

@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Game from './Game.js'
+import Leaderboard from './game-components/Leaderboard.js'
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,19 +18,15 @@ function App() {
       </header>
       <Router>
         <div>
-          <nav>
-          <ul>
-
-            <li>
-              <Link to="/game">Full Game</Link>
-            </li>
-
-
-          </ul>
-          </nav>
+          <Link to="/game">Full Game</Link>
+          <br></br>
+          <Link to="/leaderboard">Leaderboard</Link>
         <Switch>
           <Route path="/game">
             <Game/>
+          </Route>
+          <Route path="/leaderboard">
+            <Leaderboard/>
           </Route>
 
        </Switch>
@@ -45,13 +42,8 @@ function App() {
 
 /*
 
-<li>
-  <Link to="/leaderboard">Leaderboard</Link>
-</li>
 
-<Route path="/leaderboard">
-  <Leaderboard/>
-</Route>
+
 
 <li>
   <Link to="/quickgame">Quick Game</Link>
