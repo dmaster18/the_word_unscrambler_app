@@ -20,7 +20,7 @@ export default class Game extends Component {
       i: 0,
       gameInfo: {},
       wordSession: {},
-      nextText: 'Next Letter Set',
+      nextText: 'Next Letter Grouping',
       seconds: 0
     }
   }
@@ -42,13 +42,6 @@ export default class Game extends Component {
   shuffle(letters) {
     return letters.split('').sort(() => Math.random() - 0.5);
   }
-
-  timer = () => {
-    const timer = new Timer('test-timer');
-    return timer;
-  }
-
-
 
   viewScore = () => {
     let gameElement = document.getElementById('game')
@@ -96,12 +89,13 @@ export default class Game extends Component {
  }
 
  componentDidMount() {
-   this.timer.start();
+   const timer = new Timer('test-timer');
+   timer.start();
    this.fetchWords().then(json => {
    this.setState(
      {gameInfo: json,
      wordSession: json.data[this.state.i].attributes,
-     seconds: this.timer.seconds()
+     seconds:timer.seconds()
      }
    )})
  }
