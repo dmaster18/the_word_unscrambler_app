@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Game from './Game.js'
-import Leaderboard from './game-components/Leaderboard.js'
+import Leaderboard from './Leaderboard.js'
 import {
   BrowserRouter as Router,
   Switch,
