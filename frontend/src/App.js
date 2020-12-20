@@ -19,18 +19,21 @@ function App() {
       </header>
       <Router>
         <div>
-          <Link to="/game">Full Game</Link>
-          <br></br>
-          <Link to="/leaderboard">Leaderboard</Link>
         <Switch>
-          <Route path="/game">
+          <Route exact path="/">
+            <Link to="/game">Full Game</Link>
+            <br></br>
+            <Link to="/leaderboard">Leaderboard</Link>
+          </Route>
+          <Route exact path="/game">
             <Game/>
           </Route>
-          <Route path="/leaderboard">
+          <Route exact path="/leaderboard">
             <Leaderboard/>
           </Route>
-
        </Switch>
+       <br></br>
+       <Link to="/">Home Page</Link>
       </div>
     </Router>
     </div>
