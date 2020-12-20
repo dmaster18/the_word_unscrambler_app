@@ -88,8 +88,9 @@ export default class Game extends Component {
    this.fetchWords().then(json => {
    this.setState(
      { gameInfo: json,
-     wordSession: json.data[this.state.i].attributes,
-     initialTime: Date.now()
+       wordSession: json.data[this.state.i].attributes,
+       initialTime: Date.now(),
+       isRunning: true
      }
    )
   })
@@ -99,6 +100,13 @@ export default class Game extends Component {
 
 
  // Renderer callback with condition
+
+handleComplete = () => {
+  this.setState(
+    {isRunning: false}
+  )
+}
+
 renderer = ({ minutes, seconds, completed }) => {
    if (completed) {
      // Render a completed state
@@ -109,10 +117,10 @@ renderer = ({ minutes, seconds, completed }) => {
    }
  };
 
-
   render() {
     return (
       <div id="game">
+        <Timer initialTime={this.state.initialTime} numberOfMilliseconds={0.5*1000*60} onComplete={this.handleComplete}/>
         {this.state.initialTime && <div id='countdown'> <Countdown date={this.initialTime + 0.5*60*1000} renderer={this.renderer}/> </div>}
         {this.state.wordSession.name &&
           <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
