@@ -33,7 +33,7 @@ function reducer(state=initialState, action) {
         return {...state, wordIndex: state.wordIndex +=1}
       }
     case 'SET_WARNING':
-
+    
     case 'START_GAME'
     case 'END_GAME'
 

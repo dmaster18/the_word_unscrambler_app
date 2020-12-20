@@ -1,1 +1,2 @@
 export const FETCH_WORDS='FETCH_WORDS'
+export const FETCH_WORDS='FETCH_WORDS'

@@ -38,7 +38,7 @@ export default class WordContainer extends Component {
           warning: null
         });
       if (!this.eventIDArray.includes(event.target.id)){
-        this.eventIDArray.push(event.target.id);
+        this.evenftIDArray.push(event.target.id);
         this.wordArray.push(event.target.value);
         this.setState({
           wordFormed: this.wordArray.join('')
