@@ -3712,3 +3712,12 @@ zymolysis.save
 zymolytic.save
 zymometer.save
 zymurgies.save
+
+
+
+david = Player.new(name: 'David', score: 100)
+raul = Player.new(name: 'Raul', score: 15)
+nikolai = Player.new(name: 'Nikolai', score: 50)
+david.save
+raul.save
+nikolai.save
