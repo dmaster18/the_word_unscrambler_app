@@ -3,7 +3,7 @@ import WordContainer from './game-components/WordContainer.js'
 import Word from './game-components/Word.js'
 import Response from './game-components/Response.js'
 import Timer from './game-components/Timer.js'
-import LeaderBoard from './game-components/LeaderBoard.js'
+import Leaderboard from './game-components/Leaderboard.js'
 
 
 export default class Game extends Component {
