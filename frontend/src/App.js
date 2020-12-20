@@ -10,21 +10,38 @@ function App() {
       <header className="the-word-unscrambler">
       </header>
       <Router>
-        <nav>
-        <ul>
-          <li>
-            <Link to="/quickgame">Quick Game</Link>
+        <div>
+          <nav>
+          <ul>
+            <li>
+              <Link to="/quickgame">Quick Game</Link>
             </li>
-          <li>
-            <Link to="/game">Full Game</Link>
-          </li>
-          <li>
-            <Link to="/trainer">Word Trainer</Link>
-          </li>
-          <li>
-            <Link to="/leaderboard">Leaderboard</Link>
-          </li>
-        </ul>
+            <li>
+              <Link to="/game">Full Game</Link>
+            </li>
+            <li>
+              <Link to="/trainer">Word Trainer</Link>
+            </li>
+            <li>
+              <Link to="/leaderboard">Leaderboard</Link>
+            </li>
+          </ul>
+          </nav>
+        <Switch>
+          <Route path="/quickgame">
+            <Quickgame />
+          </Route>
+          <Route path="/game">
+            <Game />
+          </Route>
+          <Route path="/trainer">
+            <Trainer />
+          </Route>
+          <Route path="/leaderboard">
+            <Leaderboard />
+          </Route>
+        </div>
+       </Switch>
     </nav>
       </Router>
 
