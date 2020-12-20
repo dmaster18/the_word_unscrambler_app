@@ -43,12 +43,17 @@ export default class Game extends Component {
     return letters.split('').sort(() => Math.random() - 0.5);
   }
 
-  createTimer = () => {
+  timer = () => {
     const timer = new Timer('test-timer');
     return timer;
   }
 
 
+
+  viewScore = () => {
+    let gameElement = document.getElementById('game')
+    gameElement.innerHTML= `<h1 id='final-score'>Your Final Score is ${this.state.score} Points!</h1><br><br><button onClick=${this.submitPlayerData}>Submit to Leaderboard</button>`
+  }
 
   next = () => {
     if (this.i < (this.state.gameInfo.data.length - 1)){
@@ -59,8 +64,7 @@ export default class Game extends Component {
           wordSession: newWordSession}
         )
     } else if (this.state.nextText === 'View Score') {
-      let gameElement = document.getElementById('game')
-      gameElement.innerHTML= `<h1 id='final-score'>Your Final Score is ${this.state.score} Points!</h1><br><br><button onClick=${this.submitPlayerData}>Submit to Leaderboard</button>`
+      this.viewScore();
     }
     else {
       this.setState(
@@ -92,10 +96,12 @@ export default class Game extends Component {
  }
 
  componentDidMount() {
+   this.timer.start();
    this.fetchWords().then(json => {
    this.setState(
      {gameInfo: json,
-     wordSession: json.data[this.state.i].attributes
+     wordSession: json.data[this.state.i].attributes,
+     seconds: this.timer.seconds()
      }
    )})
  }
