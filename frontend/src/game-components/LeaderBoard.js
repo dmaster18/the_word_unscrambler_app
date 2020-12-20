@@ -20,15 +20,15 @@ export default class Leaderboard extends Component {
     const leaderboardHeader = '<tr><th>Name</th><th>Score</th>/tr>';
     const arrayOfPlayerData = this.state.playerData.map(player => `<tr><td>${player.attributes.name}</td> <td>${player.attributes.score} Points</td></tr>`);
     const leaderboardData = arrayOfPlayerData.join(' ');
-    leaderboard.innerHTML = `${leaderboardHeader} ${leaderboardData}`;
-    main.appendChild(leaderboard);
+    const leaderboardHTML =  `${leaderboardHeader} ${leaderboardData}`;
   }
 
   render () {
-    return (<table className='leaderboard'>
-      {this.renderLeaderboard()}
-    </table>
-  })
+    return (
+      <table className='leaderboard'>
+        {this.renderLeaderboard()}
+      </table>
+    )
   }
-  
+
 }
