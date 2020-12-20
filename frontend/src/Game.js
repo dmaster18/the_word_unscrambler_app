@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import WordContainer from './game-components/WordContainer.js'
 import Word from './game-components/Word.js'
 import Leaderboard from './Leaderboard.js'
+import Timer from './game-components/Timer.js'
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import Countdown from "react-countdown";
+
 
 export default class Game extends Component {
   constructor(props) {
@@ -23,6 +25,7 @@ export default class Game extends Component {
       wordSession: {},
       nextText: 'Next Letter Grouping',
       seconds: 0,
+      status: 'Loading'
     }
   }
 
@@ -39,7 +42,6 @@ export default class Game extends Component {
     return console.log(words.data[this.i].attributes.name)
   }
 
-
   shuffle(letters) {
     return letters.split('').sort(() => Math.random() - 0.5);
   }
@@ -52,13 +54,10 @@ export default class Game extends Component {
         {i: this.i,
           wordSession: newWordSession}
         )
-    } else if (this.state.nextText === 'View Score') {
-      this.viewScore();
-    }
-    else {
+    } else {
       this.setState(
-        {nextText: 'View Score'}
-        )
+        {status: 'Complete'}
+      )
     }
   }
 
@@ -90,43 +89,42 @@ export default class Game extends Component {
      { gameInfo: json,
        wordSession: json.data[this.state.i].attributes,
        initialTime: Date.now(),
-       isRunning: true
+       status: 'Running'
      }
    )
   })
  }
 
- viewScore = () => <><h1 id='final-score'>Your Final Score is {this.state.score} Points!</h1><button onClick={this.submitPlayerData}>Submit to Leaderboard</button></>
-
-
- // Renderer callback with condition
-
 handleComplete = () => {
   this.setState(
-    {isRunning: false}
+    {status: 'Complete'}
   )
 }
 
-renderer = ({ minutes, seconds, completed }) => {
-   if (completed) {
-     // Render a completed state
-     return this.viewScore();
-   } else {
-     // Render a countdown
-     return <span>{minutes}:{seconds}</span>;
-   }
- };
-
   render() {
-    return (
-      <div id="game">
-        <Timer initialTime={this.state.initialTime} numberOfMilliseconds={0.5*1000*60} onComplete={this.handleComplete}/>
-        {this.state.initialTime && <div id='countdown'> <Countdown date={this.initialTime + 0.5*60*1000} renderer={this.renderer}/> </div>}
-        {this.state.wordSession.name &&
-          <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
+    switch (this.state.status) {
+      case 'Loading': {
+        return 'Loading...'
       }
-        <button onClick={this.next}>{this.state.nextText}</button>
-      </div>
-    )
+      case 'Running': {
+        return (
+          <div id="game">
+            {<Timer initialTime={this.state.initialTime} numberOfMilliseconds={0.5*1000*60} onComplete={this.handleComplete}/>}
+            {this.state.wordSession.name &&
+              <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
+          }
+            <button onClick={this.next}>{this.state.nextText}</button>
+          </div>
+        )
+        }
+        case 'Complete': {
+          return (
+            <>
+              <h1 id='final-score'>Your Final Score is {this.state.score} Points!</h1>
+              <button onClick={this.submitPlayerData}>Submit to Leaderboard</button>
+            </>
+          );
+        }
+    }
   }
 }

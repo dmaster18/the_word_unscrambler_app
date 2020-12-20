@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Countdown from "react-countdown";
 
 export default class Timer extends Component {
 
