@@ -74,7 +74,7 @@ export default class WordContainer extends Component {
 
   handleSubmitButtonClick = () => {
     this.words.push(this.state.wordFormed.toUpperCase());
-    this.props.evaluateWord(this.state.wordFormed.toUpperCase());
+    this.evaluateWord(this.state.wordFormed.toUpperCase());
     this.wordArray = [];
     this.eventIDArray = [];
     this.setState(
@@ -87,7 +87,12 @@ export default class WordContainer extends Component {
       <Word letterArray={this.props.letterArray} evaluateWord={this.evaluateWord}
       correctWords={this.state.correctWords} incorrectWords={this.state.incorrectWords}
       submittedWords={this.state.submittedWords} score={this.props.score}
-      warning={this.state.warning} onTileClick={this.handleTileClick} onDeleteLetter={this.handleDeleteLetterButtonClick} onDeleteWord={this.handleDeleteWordButtonClick} onSubmit={this.handleSubmitButtonClick}/>
+      warning={this.state.warning} onTileClick={this.handleTileClick}
+      onDeleteLetter={this.handleDeleteLetterButtonClick}
+      onDeleteWord={this.handleDeleteWordButtonClick}
+      onSubmit={this.handleSubmitButtonClick}
+      wordFormed={this.state.wordFormed}
+      />
     )
   }
 }
