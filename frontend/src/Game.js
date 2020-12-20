@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import WordContainer from './game-components/WordContainer.js'
 import Word from './game-components/Word.js'
-import Timer from './game-components/Timer.js'
 import Leaderboard from './Leaderboard.js'
 import {
   BrowserRouter as Router,
