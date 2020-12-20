@@ -21,13 +21,16 @@ export default class Leaderboard extends Component {
     const arrayOfPlayerData = this.state.playerData.map(player => `<tr><td>${player.attributes.name}</td> <td>${player.attributes.score} Points</td></tr>`);
     const leaderboardData = arrayOfPlayerData.join(' ');
     const leaderboardHTML =  `${leaderboardHeader} ${leaderboardData}`;
+    return leaderboardHTML;
   }
 
   render () {
     return (
-      <table className='leaderboard'>
-        {this.renderLeaderboard()}
-      </table>
+      <div>
+        <table className='leaderboard'>
+          {this.renderLeaderboard()}
+        </table>
+      </div>
     )
   }
 
