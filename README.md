@@ -1,6 +1,6 @@
 # The Word Unscrambler
 
-The Word Unscrambler is a game based on the JavaScript React framework. It allows users to play a game where they are tasked with generating as many words as possible.
+The Word Unscrambler is a game based on the JavaScript React framework. It allows users to play a game where they are tasked with generating as many words as possible from a random grouping of nine letters.
 
 ## Installation
 
@@ -10,12 +10,13 @@ In a separate Terminal window, go to the program's 'frontend' directory. Run npm
 
 ## Usage
 
-The user should be taken directly to the app's homepage on his or her local machine's default web browser. From there, the user can click a link to study cocktails, a link to take a quiz, or view the leaderboard.
+From the homepage, the user can click a link to play a quick game, a full game, or view the leaderboard.
 
-within 3 minutes from a random assortment of nine letters. Users with especially high scores can feel free to post their high scores to the app's leaderboard.
+In both the quick and full game modules, the user must score as many points as possible by creating as many words in the allotted time. Each word has a score that is equivalent to the length of the word, so a two-letter word is worth two points and a nine-letter word is worth nine points.
 
-Users cannot use any letter tile more than once when forming a new word. When a user enters a word, the game will inform him whether the word is correct or incorrect.
+In the quick word game, the user must score as many points as possible within a minute from one letter grouping. In the full word game, the user must do the same but with ten possible letter groupings within five minutes. The user cannot use any letter tile more than once when forming anew word. When a user enters a word, the game will inform him whether the word is correct or incorrect.
 
+Users with especially high scores can feel free to post their high scores to the app's leaderboard.
 
 
 ## Contributing
