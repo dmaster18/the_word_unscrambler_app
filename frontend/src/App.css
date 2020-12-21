@@ -42,6 +42,30 @@
   background-color: red;
 }
 
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.navigation a {
+  margin-bottom: 15px;
+}
+
+.buttons button {
+  padding: 5px;
+  border-radius: 5px;
+  background: white;
+  border-color: black;
+  margin-right: 10px;
+}
+
+.buttons {
+  margin-bottom: 20px;
+}
+
 div.tile-container {
     padding: 100px;
     display: grid;
@@ -53,8 +77,9 @@ div.tile-container {
     border-style: solid;
     border-color: black;
     background: linear-gradient(to right, #C19A6B, transparent 95%);
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
@@ -68,6 +93,26 @@ div.tile-container {
 
   #current-word {
     text-transform: uppercase;
+    height: 22px;
+  }
+
+  /* TODO rename these word list classes */
+  .guessed-words {
+    text-transform: uppercase;
+  }
+
+  .submitted-words {
+    display: flex;
+    justify-content: center;
+  }
+
+  .submitted-words span {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .submitted-words div {
+    padding-right: 20px;
   }
 
   .warning {

@@ -17,18 +17,29 @@ export default function reducer(state=initialState, action) {
       usedTiles.pop()
       return {...state, usedTiles, userWarning: null}
     case 'ADD_LETTER':
-      if (usedTiles.find((tile) => tile.id === action.usedTile.id)) {
-        return {...state, userWarning: "Can't use same tile twice. Please choose another."}
+      if (state.usedTiles.find((tile) => tile.id === action.usedTile.id)) {
+        return {
+          ...state,
+          userWarning: "Can't use same tile twice. Please choose another."
+        }
       } else {
-        return {...state, usedTiles: [...state.usedTiles, action.usedTile]}
+        return {
+          ...state,
+          usedTiles: [...state.usedTiles, action.usedTile],
+          userWarning: null
+        }
       }
     case 'SUBMIT_WORD':
       const lettersUsed = state.usedTiles.map(usedTile => usedTile.letter);
       const wordFormed = lettersUsed.join('');
-      if (state.wordSet[state.wordIndex].allWords.includes(wordFormed) && !state.correctWords.includes(wordFormed)){
-        return {...state, submittedWords: [...state.submittedWords, wordFormed],
+      if (state.wordSet[state.wordIndex].allWords.includes(wordFormed.toLowerCase()) && !state.correctWords.includes(wordFormed)){
+        return {
+          ...state,
+          submittedWords: [...state.submittedWords, wordFormed],
           correctWords: [...state.correctWords, wordFormed],
-          score: state.score += wordFormed.length, usedTiles: []}
+          score: state.score += wordFormed.length,
+          usedTiles: [],
+        }
        } else if (state.correctWords.includes(wordFormed)) {
           return {...state, userWarning: "Can't submit word twice.", usedTiles: []}
        } else {

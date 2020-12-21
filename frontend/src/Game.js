@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import WordContainer from './game-components/WordContainer.js'
-import Word from './game-components/Word.js'
-import Leaderboard from './Leaderboard.js'
-import Timer from './game-components/Timer.js'
-import { connect } from 'react-redux'
-import {fetchWords, endGame, nextWord } from './actions'
-
-
+import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,61 +7,25 @@ import {
   Link
 } from "react-router-dom";
 
+import WordContainer from './game-components/WordContainer';
+import Word from './game-components/Word';
+import Leaderboard from './Leaderboard';
+import Timer from './game-components/Timer';
+import {fetchWords, endGame, nextWord } from './actions';
 
 function mapDispatchToProps(dispatch){
-  return { fetchWords: () => dispatch(fetchWords()),
+  return { fetchWords: (numberOfWords) => dispatch(fetchWords(numberOfWords)),
    endGame: () => dispatch(endGame()),
-   getNextWord: () => dispatch(nextWord())
   }
 }
 
-function mapStateToProps(state){
-  return {status: state.gameStatus, score: state.score, letterArray: state.wordSet[state.wordIndex].letterArray, allWords: state.wordSet[state.wordIndex].allWords}
+function mapStateToProps(state) {
+  return {status: state.gameStatus, score: state.score,
+    letterArray: state.wordSet.length > 0 ? state.wordSet[state.wordIndex].letterArray : [],
+    allWords: state.wordSet.length > 0 ? state.wordSet[state.wordIndex].allWords : []}
 }
 
 class Game extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-/*
-  fetchWords() {
-    const words_url = `http://127.0.0.1:3000/words/?limit=${this.props.numberOfWords}`;
-    return fetch(words_url).then(resp => resp.json());
-  }
-*/
-
-  /*shuffle(letters) {
-    return letters.split('').sort(() => Math.random() - 0.5);
-  }*/
-
-
-  /*
-  next = () => {
-    if (this.i < (this.state.gameInfo.data.length - 1)){
-      this.i +=1
-      let newWordSession = this.state.gameInfo.data[this.i].attributes
-      this.setState(
-        {i: this.i,
-          wordSession: newWordSession}
-        )
-    } else {
-      this.setState(
-        {status: 'Complete'}
-      )
-    }
-  }
-  */
-
-/*
-  increment = (userInput) => {
-    let newScore = this.state.score + userInput.length
-    this.setState({
-     score: newScore
-    })
- }
-*/
-
 /*
  submitPlayerData () {
    const main = document.createElement('main');
@@ -86,20 +43,10 @@ class Game extends Component {
  }
  */
 
- /*handleComplete = () => {
-   this.setState(
-     {status: 'Complete'}
-   )
- }*/
-
 
  componentDidMount() {
-   this.props.fetchWords(this.props.numberOfWords).then(() => {
-     this.setState({ initialTime: Date.now() });
-   });
+   this.props.fetchWords(this.props.numberOfWords);
  }
-
-
 
   render() {
     switch (this.props.status) {
@@ -109,9 +56,8 @@ class Game extends Component {
       case 'Running': {
         return (
           <div id="game">
-            <Timer initialTime={this.state.initialTime} numberOfMilliseconds={this.props.gameDuration} onComplete={this.props.endGame}/>
-            <WordContainer letterArray={this.props.letterArray} allWords={this.props.allWords} score ={this.props.score}/>
-            {this.props.numberOfWords > 1 && (<button onClick={this.props.getNextWord}>Next Letter Grouping</button>)}
+            <Timer numberOfMilliseconds={this.props.gameDuration} onComplete={this.props.endGame}/>
+            <WordContainer />
           </div>
         )
         }

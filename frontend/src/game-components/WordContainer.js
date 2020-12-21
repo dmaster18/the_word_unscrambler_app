@@ -1,9 +1,34 @@
 import React, { Component } from 'react';
 import Word from './Word.js'
+import { connect } from 'react-redux'
+import { clickTile, deleteLetter, deleteWord, nextWord, submitWord } from '../actions'
 
-export default class WordContainer extends Component {
+function mapDispatchToProps(dispatch){
+  return {
+    clickTile: (tile) => dispatch(clickTile(tile)),
+    deleteLetter: () => dispatch(deleteLetter()),
+    deleteWord: () => dispatch(deleteWord()),
+    submitWord: () => dispatch(submitWord()),
+    getNextWord: () => dispatch(nextWord()),
+  }
+}
 
-  constructor(props) {
+function mapStateToProps(state) {
+  return {
+    letterArray: state.wordSet[state.wordIndex].letterArray,
+    correctWords: state.correctWords,
+    incorrectWords: state.incorrectWords,
+    submittedWords: state.submittedWords,
+    score: state.score,
+    warning: state.userWarning,
+    wordFormed: state.usedTiles.map(tile => tile.letter).join(''),
+    numberOfWords: state.wordSet.length,
+  };
+}
+
+class WordContainer extends Component {
+
+/*  constructor(props) {
     super(props)
     this.eventIDArray = []
     this.wordArray = []
@@ -15,8 +40,9 @@ export default class WordContainer extends Component {
       submittedWords: [],
       warning: null,
     };
-  }
+  }*/
 
+/*
   evaluateWord = (userInput) => {
     userInput = userInput.toUpperCase()
     if ((this.props.allWords).includes(userInput) && !this.state.correctWords.includes(userInput)){
@@ -32,8 +58,11 @@ export default class WordContainer extends Component {
       })
     }
   }
-
+*/
   handleTileClick = (event) => {
+    this.props.clickTile({letter: event.target.value, id: event.target.id})
+  }
+/*
       this.setState({
           warning: null
         });
@@ -50,8 +79,10 @@ export default class WordContainer extends Component {
           })
         return this.props.warning;
       }
-  }
+  }*/
 
+
+  /*
   handleDeleteLetterButtonClick = () => {
     let currentWord = document.getElementById('current-word').innerText;
     currentWord = currentWord.slice(0,-1);
@@ -61,7 +92,8 @@ export default class WordContainer extends Component {
       {wordFormed: this.wordArray.join(''), warning: null}
     )
   }
-
+  */
+ /*
   handleDeleteWordButtonClick = () => {
     let currentWord = document.getElementById('current-word').innerText;
     currentWord = [];
@@ -71,7 +103,8 @@ export default class WordContainer extends Component {
       {wordFormed: this.wordArray.join(''), warning: null}
     )
   }
-
+*/
+/*
   handleSubmitButtonClick = () => {
     this.words.push(this.state.wordFormed.toUpperCase());
     this.evaluateWord(this.state.wordFormed.toUpperCase());
@@ -81,18 +114,26 @@ export default class WordContainer extends Component {
       {wordsSubmitted: this.words, warning: null}
     )
   }
+*/
 
   render() {
     return (
-      <Word letterArray={this.props.letterArray} evaluateWord={this.evaluateWord}
-      correctWords={this.state.correctWords} incorrectWords={this.state.incorrectWords}
-      submittedWords={this.state.submittedWords} score={this.props.score}
-      warning={this.state.warning} onTileClick={this.handleTileClick}
-      onDeleteLetter={this.handleDeleteLetterButtonClick}
-      onDeleteWord={this.handleDeleteWordButtonClick}
-      onSubmit={this.handleSubmitButtonClick}
-      wordFormed={this.state.wordFormed}
+      <Word
+        letterArray={this.props.letterArray}
+        correctWords={this.props.correctWords}
+        incorrectWords={this.props.incorrectWords}
+        submittedWords={this.props.submittedWords}
+        score={this.props.score}
+        warning={this.props.warning}
+        onTileClick={this.handleTileClick}
+        onDeleteLetter={this.props.deleteLetter}
+        onDeleteWord={this.props.deleteWord}
+        onSubmit={this.props.submitWord}
+        wordFormed={this.props.wordFormed}
+        onGetNextWord={this.props.numberOfWords > 1 ? this.props.getNextWord : undefined}
       />
     )
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(WordContainer)

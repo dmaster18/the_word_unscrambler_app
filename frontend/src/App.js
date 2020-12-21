@@ -20,23 +20,32 @@ function App() {
         <div>
         <Switch>
           <Route exact path="/">
-            <Link to="/quick-game">Quick Game</Link>
-            <Link to="/full-game">Full Game</Link>
-            <Link to="/leaderboard">Leaderboard</Link>
+            <nav className="navigation">
+              <Link to="/quick-game">Quick Game</Link>
+              <Link to="/full-game">Full Game</Link>
+              <Link to="/leaderboard">Leaderboard</Link>
+            </nav>
           </Route>
           <Route exact path="/quick-game">
             <Game numberOfWords={1} gameDuration={1*60*1000}/>
+            <nav>
+              <Link to="/">Home Page</Link>
+            </nav>
           </Route>
           <Route exact path="/full-game">
             <Game numberOfWords={10} gameDuration={5*60*1000}/>
+            <nav>
+              <Link to="/">Home Page</Link>
+            </nav>
           </Route>
-
           <Route exact path="/leaderboard">
             <Leaderboard/>
+            <nav>
+              <Link to="/">Home Page</Link>
+            </nav>
           </Route>
        </Switch>
        <br></br>
-       <Link to="/">Home Page</Link>
       </div>
     </Router>
     </div>

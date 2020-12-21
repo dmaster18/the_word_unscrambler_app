@@ -9,6 +9,11 @@ const zeroPad = (number) => {
   }
 }
 export default class Timer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {initialTime: null}
+  }
+
   renderer = ({ minutes, seconds, completed }) => {
     if (completed) {
      // Render a completed state
@@ -19,10 +24,19 @@ export default class Timer extends Component {
     }
   };
 
-  render() {
-    return (
-      <Countdown date={this.props.initialTime + this.props.numberOfMilliseconds} renderer={this.renderer} onComplete={this.props.onComplete}/>
+  componentDidMount() {
+    this.setState(
+      {initialTime: Date.now()
+      }
     )
+  }
+
+  render() {
+    if (this.state.initialTime) {
+      return <Countdown date={this.state.initialTime + this.props.numberOfMilliseconds} renderer={this.renderer} onComplete={this.props.onComplete}/>
+    } else {
+      return null;
+    }
   }
 
 }
