@@ -29,7 +29,7 @@ function reducer(state=initialState, action) {
         return {...state, submittedWords: [...state.submittedWords, wordFormed],
          correctWords: [...state.correctWords, wordFormed], score: state.score += wordFormed.length, usedTiles: []
        } else if (state.correctWords.includes(wordFormed)) {
-         return {...state, userWarning: "Can't submit word twice.", usedTiles: []}
+          return {...state, userWarning: "Can't submit word twice.", usedTiles: []}
        } else {
          return {...state, submittedWords: [...state.submittedWords, wordFormed],
          incorrectWords: [...state.incorrectWords, wordFormed], usedTiles: []
@@ -41,10 +41,9 @@ function reducer(state=initialState, action) {
       } else {
         return {...state, wordIndex: state.wordIndex +=1, usedTiles: []}
       }
-    case 'START_GAME'
-    case 'END_GAME'
-
+    case 'START_GAME':
+      return {...state, gameStatus: 'Running'}
+    case 'END_GAME':
+      return {...state, gameStatus: 'Complete'}
   }
-
-
 }
