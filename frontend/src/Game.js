@@ -3,6 +3,9 @@ import WordContainer from './game-components/WordContainer.js'
 import Word from './game-components/Word.js'
 import Leaderboard from './Leaderboard.js'
 import Timer from './game-components/Timer.js'
+import { connect } from 'react-redux'
+import {fetchWords, endGame, nextWord } from './actions'
+
 
 import {
   BrowserRouter as Router,
@@ -12,38 +15,35 @@ import {
 } from "react-router-dom";
 
 
-export default class Game extends Component {
+function mapDispatchToProps(dispatch){
+  return { fetchWords: () => dispatch(fetchWords()),
+   endGame: () => dispatch(endGame()),
+   getNextWord: () => dispatch(nextWord())
+  }
+}
+
+function mapStateToProps(state){
+  return {status: state.gameStatus, score: state.score, letterArray: state.wordSet[state.wordIndex].letterArray, allWords: state.wordSet[state.wordIndex].allWords}
+}
+
+class Game extends Component {
   constructor(props) {
     super(props)
-    this.initialTime = Date.now()
-    this.i = 0
-    this.questionCompleted = false
-    this.state = {
-      score: 0,
-      i: 0,
-      gameInfo: {},
-      wordSession: {},
-      status: 'Loading'
-    }
   }
 
+/*
   fetchWords() {
     const words_url = `http://127.0.0.1:3000/words/?limit=${this.props.numberOfWords}`;
     return fetch(words_url).then(resp => resp.json());
   }
+*/
 
-  initiateGame() {
-    return this.fetchWords().then(words => this.renderWord(words));
-  }
-
-  renderWord = (words) => {
-    return console.log(words.data[this.i].attributes.name)
-  }
-
-  shuffle(letters) {
+  /*shuffle(letters) {
     return letters.split('').sort(() => Math.random() - 0.5);
-  }
+  }*/
 
+
+  /*
   next = () => {
     if (this.i < (this.state.gameInfo.data.length - 1)){
       this.i +=1
@@ -58,14 +58,18 @@ export default class Game extends Component {
       )
     }
   }
+  */
 
+/*
   increment = (userInput) => {
     let newScore = this.state.score + userInput.length
     this.setState({
      score: newScore
     })
  }
+*/
 
+/*
  submitPlayerData () {
    const main = document.createElement('main');
    const leaderboardForm = document.createElement('div');
@@ -80,45 +84,41 @@ export default class Game extends Component {
      return fetch(playersURL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).then(() => {console.log('hello')});
    });
  }
+ */
+
+ /*handleComplete = () => {
+   this.setState(
+     {status: 'Complete'}
+   )
+ }*/
+
 
  componentDidMount() {
-   this.fetchWords().then(json => {
-   this.setState(
-     { gameInfo: json,
-       wordSession: json.data[this.state.i].attributes,
-       initialTime: Date.now(),
-       status: 'Running'
-     }
-   )
-  })
+   this.props.fetchWords(this.props.numberOfWords).then(() => {
+     this.setState({ initialTime: Date.now() });
+   });
  }
 
-handleComplete = () => {
-  this.setState(
-    {status: 'Complete'}
-  )
-}
+
 
   render() {
-    switch (this.state.status) {
+    switch (this.props.status) {
       case 'Loading': {
         return 'Loading...'
       }
       case 'Running': {
         return (
           <div id="game">
-            {<Timer initialTime={this.state.initialTime} numberOfMilliseconds={this.props.gameDuration} onComplete={this.handleComplete}/>}
-            {this.state.wordSession.name &&
-              <WordContainer letterArray={this.shuffle(this.state.wordSession.name)} name={this.state.wordSession.name} allWords={this.state.wordSession.all_words} score ={this.state.score} increment={this.increment}/>
-          }
-            {this.props.numberOfWords > 1 && (<button onClick={this.next}>Next Letter Grouping</button>)}
+            <Timer initialTime={this.state.initialTime} numberOfMilliseconds={this.props.gameDuration} onComplete={this.props.endGame}/>
+            <WordContainer letterArray={this.props.letterArray} allWords={this.props.allWords} score ={this.props.score}/>
+            {this.props.numberOfWords > 1 && (<button onClick={this.props.getNextWord}>Next Letter Grouping</button>)}
           </div>
         )
         }
         case 'Complete': {
           return (
             <>
-              <h1 id='final-score'>Your Final Score is {this.state.score} Points!</h1>
+              <h1 id='final-score'>Your Final Score is {this.props.score} Points!</h1>
               <button onClick={this.submitPlayerData}>Submit to Leaderboard</button>
             </>
           );
@@ -126,3 +126,5 @@ handleComplete = () => {
     }
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game)
