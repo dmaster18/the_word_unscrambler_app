@@ -3718,6 +3718,10 @@ zymurgies.save
 david = Player.new(name: 'David', score: 100)
 raul = Player.new(name: 'Raul', score: 15)
 nikolai = Player.new(name: 'Nikolai', score: 50)
+horatio = Player.new(name: 'Horatio', score: 75)
+esteban = Player.new(name: 'Esteban', score: 550)
 david.save
 raul.save
 nikolai.save
+horatio.save
+esteban.save

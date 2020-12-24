@@ -14,7 +14,7 @@ From the homepage, the user can click a link to play a quick game, a full game, 
 
 In both the quick and full game modules, the user must score as many points as possible by creating as many words in the allotted time. Each word has a score that is equivalent to the length of the word, so a two-letter word is worth two points and a nine-letter word is worth nine points.
 
-In the quick word game, the user must score as many points as possible within a minute from one letter grouping. In the full word game, the user must do the same but with ten possible letter groupings within five minutes. The user cannot use any letter tile more than once when forming anew word. When a user enters a word, the game will inform him whether the word is correct or incorrect.
+In the quick word game, the user must score as many points as possible within a minute from one letter grouping. In the full word game, the user must do the same but with ten possible letter groupings within five minutes. The user cannot use any letter tile more than once when forming a new word. When a user enters a word, the game will inform him whether the word is correct or not.
 
 Users with especially high scores can feel free to post their high scores to the app's leaderboard.
 
