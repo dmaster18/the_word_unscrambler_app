@@ -28,19 +28,6 @@ function mapStateToProps(state) {
 
 class WordContainer extends Component {
 
-/*  constructor(props) {
-    super(props)
-    this.eventIDArray = []
-    this.wordArray = []
-    this.words = []
-    this.state = {
-      score: this.props.score,
-      correctWords: [],
-      incorrectWords: [],
-      submittedWords: [],
-      warning: null,
-    };
-  }*/
 
 /*
   evaluateWord = (userInput) => {
