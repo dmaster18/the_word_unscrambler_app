@@ -29,23 +29,6 @@ function mapStateToProps(state) {
 class WordContainer extends Component {
 
 
-/*
-  evaluateWord = (userInput) => {
-    userInput = userInput.toUpperCase()
-    if ((this.props.allWords).includes(userInput) && !this.state.correctWords.includes(userInput)){
-      this.setState({
-       submittedWords: [...this.state.submittedWords, userInput],
-       correctWords: [...this.state.correctWords, userInput]
-      })
-      this.props.increment(userInput);
-    } else {
-        this.setState({
-          submittedWords: [...this.state.submittedWords, userInput],
-          incorrectWords: [...this.state.incorrectWords, userInput]
-      })
-    }
-  }
-*/
   handleTileClick = (event) => {
     this.props.clickTile({letter: event.target.value, id: event.target.id})
   }
