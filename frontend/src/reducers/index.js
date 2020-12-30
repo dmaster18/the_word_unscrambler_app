@@ -48,10 +48,10 @@ export default function reducer(state=initialState, action) {
         }
       }
     case 'NEXT_WORD':
-      if (state.wordIndex === state.wordSet.length - 1){
+      if (state.wordIndex === (state.wordSet.length - 1)){
         return {...state, gameStatus: 'Complete', usedTiles: []}
       } else {
-        return {...state, wordIndex: state.wordIndex +=1, usedTiles: []}
+        return {...state, wordIndex: (state.wordIndex +=1), usedTiles: []}
       }
     case 'START_GAME':
       return {...state, gameStatus: 'Running'}
