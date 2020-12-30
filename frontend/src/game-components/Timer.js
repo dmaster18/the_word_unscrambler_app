@@ -16,10 +16,8 @@ export default class Timer extends Component {
 
   renderer = ({ minutes, seconds, completed }) => {
     if (completed) {
-     // Render a completed state
       return null
     } else {
-     // Render a countdown
       return <span>{zeroPad(minutes)}:{zeroPad(seconds)}</span>;
     }
   };
