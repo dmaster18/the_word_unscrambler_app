@@ -17,7 +17,7 @@ export default function reducer(state=initialState, action) {
       usedTiles.pop()
       return {...state, usedTiles, userWarning: null}
     case 'ADD_LETTER':
-      if (state.usedTiles.find((tile) => tile.id === action.usedTile.id)) {
+      if (state.usedTiles.find((tile) => (tile.id === action.usedTile.id))) {
         return {
           ...state,
           userWarning: "Can't use same tile twice. Please choose another."
@@ -37,7 +37,7 @@ export default function reducer(state=initialState, action) {
           ...state,
           submittedWords: [...state.submittedWords, wordFormed],
           correctWords: [...state.correctWords, wordFormed],
-          score: state.score += wordFormed.length,
+          score: (state.score += wordFormed.length),
           usedTiles: [],
         }
        } else if (state.correctWords.includes(wordFormed)) {
