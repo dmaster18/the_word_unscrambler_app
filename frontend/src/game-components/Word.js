@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WordList from './WordList';
 import Tile from './Tile';
+import Button from './Button'
 
 const Word = (props) => (
   <div>
@@ -15,6 +16,9 @@ const Word = (props) => (
      {props.letterArray.map((letter, index) => (<Tile key={`${letter}${index}`} onClick={props.onTileClick} letter={letter} id={index} />))}
     </div>
     <div className='buttons'>
+      <Button onClick={props.onDeleteLetter} innerText='Delete Last Letter'/>
+      <Button onClick={props.onDeleteWord} innerText='Delete Current Word'/>
+      <Button onClick={props.onSubmit} innerText='Submit Word'/>
       <button onClick={props.onDeleteLetter}>Delete Last Letter</button>
       <button onClick={props.onDeleteWord}>Delete Current Word</button>
       <button onClick={props.onSubmit}>Submit Word</button>
