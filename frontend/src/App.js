@@ -21,6 +21,7 @@ function App() {
             <nav className="navigation">
               <Link to="/quick-game">Quick Game</Link>
               <Link to="/full-game">Full Game</Link>
+              <Link to="/trainer">Word Trainer</Link>
               <Link to="/leaderboard">Leaderboard</Link>
             </nav>
           </Route>
@@ -32,6 +33,12 @@ function App() {
           </Route>
           <Route exact path="/full-game">
             <Game numberOfWords={10} gameDuration={5*60*1000}/>
+            <nav>
+              <Link to="/">Home Page</Link>
+            </nav>
+          </Route>
+            <Route exact path="/trainer">
+            <Trainer/>
             <nav>
               <Link to="/">Home Page</Link>
             </nav>
