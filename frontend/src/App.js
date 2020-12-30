@@ -9,8 +9,6 @@ import {
   Link
 } from "react-router-dom";
 
-
-
 function App() {
   return (
     <div className="App">
@@ -52,6 +50,7 @@ function App() {
   );
 }
 
+export default App;
 
 
 
@@ -74,5 +73,3 @@ function App() {
   <Trainer />
 </Route>
  */
-
-export default App;
