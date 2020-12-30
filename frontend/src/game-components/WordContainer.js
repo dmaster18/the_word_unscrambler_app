@@ -28,28 +28,11 @@ function mapStateToProps(state) {
 
 class WordContainer extends Component {
 
-
   handleTileClick = (event) => {
     this.props.clickTile({letter: event.target.value, id: event.target.id})
   }
 /*
-      this.setState({
-          warning: null
-        });
-      if (!this.eventIDArray.includes(event.target.id)){
-        this.eventIDArray.push(event.target.id);
-        this.wordArray.push(event.target.value);
-        this.setState({
-          wordFormed: this.wordArray.join('')
-        });
-      }
-      else {
-        this.setState({
-            warning: <div>CAN'T USE SAME TILE TWICE IN ONE WORD!</div>
-          })
-        return this.props.warning;
-      }
-  }*/
+    
 
 
   /*
