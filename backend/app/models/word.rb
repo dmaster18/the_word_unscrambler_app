@@ -1,4 +1,5 @@
 class Word < ApplicationRecord
+  belongs_to :word_collection
 
 #Word Class Variables
   @@all_two_letter_words = []
@@ -102,6 +103,28 @@ class Word < ApplicationRecord
   #end
 
 #Instance method that adds words from a given letter combination to Word class variables and removes any duplicate words
+  def self.add_all_created_words
+    self.all.each {|word|
+      word.class.all_two_letter_words = word.two_letter_words
+      word.class.all_two_letter_words = word.class.all_two_letter_words.uniq
+      word.class.all_three_letter_words = word.three_letter_words
+      word.class.all_three_letter_words = word.class.all_three_letter_words.uniq
+      word.class.all_four_letter_words = word.four_letter_words
+      word.class.all_four_letter_words = word.class.all_four_letter_words.uniq
+      word.class.all_five_letter_words = word.five_letter_words
+      word.class.all_five_letter_words = word.class.all_five_letter_words.uniq
+      word.class.all_six_letter_words = word.six_letter_words
+      word.class.all_six_letter_words = word.class.all_six_letter_words.uniq
+      word.class.all_seven_letter_words = word.seven_letter_words
+      word.class.all_seven_letter_words = word.class.all_seven_letter_words.uniq
+      word.class.all_eight_letter_words = word.eight_letter_words
+      word.class.all_eight_letter_words = word.class.all_eight_letter_words.uniq
+      word.class.all_nine_letter_words = word.nine_letter_words
+      word.class.all_nine_letter_words = word.class.all_nine_letter_words.uniq
+    }
+  end
+
+
   def add_all_words
     self.class.all_two_letter_words = self.two_letter_words
     self.class.all_two_letter_words = self.class.all_two_letter_words.uniq
@@ -131,7 +154,6 @@ class Word < ApplicationRecord
     self.seven_letter_words = sanitize(self.seven_letter_words)
     self.eight_letter_words = sanitize(self.eight_letter_words)
     self.nine_letter_words = sanitize(self.nine_letter_words)
-    add_all_words
     self
   end
 
@@ -146,6 +168,7 @@ class Word < ApplicationRecord
     all_words << seven_letter_words
     all_words << eight_letter_words
     all_words << nine_letter_words
+    #self.add_all_words
     self.all_words = all_words.flatten
   end
 

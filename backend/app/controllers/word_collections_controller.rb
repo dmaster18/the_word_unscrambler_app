@@ -1,0 +1,2 @@
+class WordCollectionsController < ApplicationController
+end
