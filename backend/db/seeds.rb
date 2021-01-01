@@ -3732,6 +3732,14 @@ seven_word_collection = WordCollection.new(name: 'Seven-Letter Words')
 eight_word_collection = WordCollection.new(name: 'Eight-Letter Words')
 nine_word_collection = WordCollection.new(name: 'Nine-Letter Words')
 
+two_word_collection.save
+three_word_collection.save
+four_word_collection.save
+five_word_collection.save
+six_word_collection.save
+seven_word_collection.save
+eight_word_collection.save
+nine_word_collection.save
 
 
 
