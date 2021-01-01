@@ -17,6 +17,17 @@ class Word < ApplicationRecord
     capitalized_word_array
   end
 
+  def add_all_words
+    self.class.all_two_letter_words << self.two_letter_words
+    self.class.all_three_letter_words << self.three_letter_words
+    self.class.all_four_letter_words << self.four_letter_words
+    self.class.all_five_letter_words << self.five_letter_words
+    self.class.all_six_letter_words << self.six_letter_words
+    self.class.all_seven_letter_words << self.seven_letter_words
+    self.class.all_eight_letter_words << self.eight_letter_words
+    self.class.all_nine_letter_words << self.nine_letter_words
+  end
+
   def sanitize_all_words
     self.two_letter_words = sanitize(self.two_letter_words)
     self.three_letter_words = sanitize(self.three_letter_words)
@@ -26,8 +37,11 @@ class Word < ApplicationRecord
     self.seven_letter_words = sanitize(self.seven_letter_words)
     self.eight_letter_words = sanitize(self.eight_letter_words)
     self.nine_letter_words = sanitize(self.nine_letter_words)
+    add_all_words
     self
   end
+
+
 
   def all_words
     all_words = []
