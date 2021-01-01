@@ -11,6 +11,14 @@ class CreateWords < ActiveRecord::Migration[6.0]
       t.text :eight_letter_words
       t.text :nine_letter_words
       t.text :all_words
+      t.text :all_two_letter_words
+      t.text :all_three_letter_words
+      t.text :all_four_letter_words
+      t.text :all_five_letter_words
+      t.text :all_six_letter_words
+      t.text :all_seven_letter_words
+      t.text :all_eight_letter_words
+      t.text :all_nine_letter_words
       t.timestamps
     end
   end
