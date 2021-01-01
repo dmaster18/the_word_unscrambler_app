@@ -1,5 +1,6 @@
 class Word < ApplicationRecord
 
+#Word Class Variables
   @@all_two_letter_words = []
   @@all_three_letter_words = []
   @@all_four_letter_words = []
@@ -9,28 +10,7 @@ class Word < ApplicationRecord
   @@all_eight_letter_words = []
   @@all_nine_letter_words = []
 
-  before_save :all_words, :two_letter_words, :three_letter_words, :four_letter_words, :five_letter_words, :six_letter_words, :seven_letter_words, :eight_letter_words, :nine_letter_words, :sanitize_all_words
-
-  serialize :two_letter_words, Array
-  serialize :three_letter_words, Array
-  serialize :four_letter_words, Array
-  serialize :five_letter_words, Array
-  serialize :six_letter_words, Array
-  serialize :seven_letter_words, Array
-  serialize :eight_letter_words, Array
-  serialize :nine_letter_words, Array
-
-  def sanitize(word_array)
-    word_array.delete_if{|word| word == "" || word == nil}
-    capitalized_word_array = word_array.map{|word| word.upcase}
-    capitalized_word_array
-  end
-
-  def aggregate_and_unique_all_words(all_word_array_type, word_array_type)
-    self.class.all_word_array_type << self.word_array_type
-    self.class.all_word_array_type = self.class.all_word_array_type.uniq
-  end
-
+#Word Class Methods housing Word Class Variables
   def self.all_two_letter_words
     @@all_two_letter_words
   end
@@ -63,6 +43,33 @@ class Word < ApplicationRecord
     @@all_nine_letter_words
   end
 
+#Before saving words, execute all these instance methods
+  before_save :all_words, :two_letter_words, :three_letter_words, :four_letter_words, :five_letter_words, :six_letter_words, :seven_letter_words, :eight_letter_words, :nine_letter_words, :sanitize_all_words
+
+#For ActiveRecord, faciliate conversion of Text type to Array type
+  serialize :two_letter_words, Array
+  serialize :three_letter_words, Array
+  serialize :four_letter_words, Array
+  serialize :five_letter_words, Array
+  serialize :six_letter_words, Array
+  serialize :seven_letter_words, Array
+  serialize :eight_letter_words, Array
+  serialize :nine_letter_words, Array
+
+#Instance method that removes blank words and capitalizes all characts of words stored in the array
+  def sanitize(word_array)
+    word_array.delete_if{|word| word == "" || word == nil}
+    capitalized_word_array = word_array.map{|word| word.upcase}
+    capitalized_word_array
+  end
+
+#Instance method that adds words from a given letter combination to Word class variables and removes any duplicate words
+  def aggregate_and_unique_all_words(all_word_array_type, word_array_type)
+    self.class.all_word_array_type << self.word_array_type
+    self.class.all_word_array_type = self.class.all_word_array_type.uniq
+  end
+
+#Instance method that adds words from a given letter combination to Word class variables and removes any duplicate words
   def add_all_words(all_word_array_type, word_array_type)
     #self.class.all_two_letter_words << self.two_letter_words
     #self.class.all_two_letter_words = self.class.all_two_letter_words.uniq
@@ -82,6 +89,7 @@ class Word < ApplicationRecord
     #self.class.all_nine_letter_words = self.class.all_nine_letter_words.uniq
   end
 
+#Sanitizes all words and adds all words to class variables
   def sanitize_all_words
     self.two_letter_words = sanitize(self.two_letter_words)
     self.three_letter_words = sanitize(self.three_letter_words)
@@ -102,6 +110,7 @@ class Word < ApplicationRecord
     self
   end
 
+#Adds all two-letter through nine-letter words to self.all_words array
   def all_words
     all_words = []
     all_words << two_letter_words
