@@ -23,14 +23,14 @@ class WordCollection < ApplicationRecord
       self.eight_word_collection << word.eight_letter_words
       self.nine_word_collection << word.nine_letter_words
     }
-    self.two_word_collection = self.two_word_collection.uniq
-    self.three_word_collection = self.three_word_collection.uniq
-    self.four_word_collection = self.four_word_collection.uniq
-    self.five_word_collection = self.five_word_collection.uniq
-    self.six_word_collection = self.six_word_collection.uniq
-    self.seven_word_collection = self.seven_word_collection.uniq
-    self.eight_word_collection = self.eight_word_collection.uniq
-    self.nine_word_collection = self.nine_word_collection.uniq
+    self.two_word_collection = self.two_word_collection.uniq.flatten
+    self.three_word_collection = self.three_word_collection.uniq.flatten
+    self.four_word_collection = self.four_word_collection.uniq.flatten
+    self.five_word_collection = self.five_word_collection.uniq.flatten
+    self.six_word_collection = self.six_word_collection.uniq.flatten
+    self.seven_word_collection = self.seven_word_collection.uniq.flatten
+    self.eight_word_collection = self.eight_word_collection.uniq.flatten
+    self.nine_word_collection = self.nine_word_collection.uniq.flatten
   end
 
 end
