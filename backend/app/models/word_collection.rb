@@ -1,5 +1,6 @@
 class WordCollection < ApplicationRecord
 
+#Ensures generate_word_collections runs before instance of it is saved
   before_save :generate_word_collections
 
   serialize :two_word_collection, Array
@@ -11,6 +12,7 @@ class WordCollection < ApplicationRecord
   serialize :eight_word_collection, Array
   serialize :nine_word_collection, Array
 
+#Adds all two- through nine-letter words to collections from all letter groupings
   def generate_word_collections
     Word.all.each {|word|
       self.two_word_collection << word.two_letter_words

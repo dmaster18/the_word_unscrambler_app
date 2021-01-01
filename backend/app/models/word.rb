@@ -1,6 +1,5 @@
 class Word < ApplicationRecord
 
-
 #Before saving words, execute all these instance methods
   before_save :all_words, :two_letter_words, :three_letter_words, :four_letter_words, :five_letter_words, :six_letter_words, :seven_letter_words, :eight_letter_words, :nine_letter_words, :sanitize_all_words
 
@@ -20,12 +19,6 @@ class Word < ApplicationRecord
     capitalized_word_array = word_array.map{|word| word.upcase}
     capitalized_word_array
   end
-
-#Instance method that adds words from a given letter combination to Word class variables and removes any duplicate words
-  #def aggregate_and_unique_all_words(all_word_array_type, word_array_type)
-  #  all_word_array_type << self.word_array_type
-  #  all_word_array_type = all_word_array_type.uniq
-  #end
 
 #Sanitizes all words and adds all words to class variables
   def sanitize_all_words
@@ -51,7 +44,6 @@ class Word < ApplicationRecord
     all_words << seven_letter_words
     all_words << eight_letter_words
     all_words << nine_letter_words
-    #self.add_all_words
     self.all_words = all_words.flatten
   end
 
