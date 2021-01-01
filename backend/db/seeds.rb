@@ -3715,6 +3715,15 @@ zymurgies.save
 
 
 
+
+
+game_word_collection = WordCollection.new(name: 'Game Word Collection')
+game_word_collection.save
+
+
+
+
+
 david = Player.new(name: 'David', score: 100)
 raul = Player.new(name: 'Raul', score: 15)
 nikolai = Player.new(name: 'Nikolai', score: 50)
@@ -3722,27 +3731,6 @@ horatio = Player.new(name: 'Horatio', score: 75)
 esteban = Player.new(name: 'Esteban', score: 550)
 claudia = Player.new(name: 'Claudia', score: 10)
 pablo = Player.new(name: 'Pablo, score: 40')
-
-two_word_collection = WordCollection.new(name: 'Two-Letter Words')
-three_word_collection = WordCollection.new(name: 'Three-Letter Words')
-four_word_collection = WordCollection.new(name: 'Four-Letter Words')
-five_word_collection = WordCollection.new(name: 'Five-Letter Words')
-six_word_collection = WordCollection.new(name: 'Six-Letter Words')
-seven_word_collection = WordCollection.new(name: 'Seven-Letter Words')
-eight_word_collection = WordCollection.new(name: 'Eight-Letter Words')
-nine_word_collection = WordCollection.new(name: 'Nine-Letter Words')
-
-two_word_collection.save
-three_word_collection.save
-four_word_collection.save
-five_word_collection.save
-six_word_collection.save
-seven_word_collection.save
-eight_word_collection.save
-nine_word_collection.save
-
-
-
 david.save
 raul.save
 nikolai.save
