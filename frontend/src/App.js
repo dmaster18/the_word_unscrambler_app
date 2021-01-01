@@ -51,25 +51,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-/*
-
-
-
-
-<li>
-  <Link to="/quickgame">Quick Game</Link>
-</li>
-<li>
-  <Link to="/trainer">Word Trainer</Link>
-</li>
-<Route path="/quickgame">
-  <Quickgame />
-</Route>
-<Route path="/trainer">
-  <Trainer />
-</Route>
- */
