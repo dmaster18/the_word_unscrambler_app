@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 2021_01_01_202621) do
 
   create_table "word_collections", force: :cascade do |t|
     t.string "name"
-    t.text "two_word_collection"
-    t.text "three_word_collection"
-    t.text "four_word_collection"
-    t.text "five_word_collection"
-    t.text "six_word_collection"
-    t.text "seven_word_collection"
-    t.text "eight_word_collection"
-    t.text "nine_word_collection"
+    t.text "two_letter_word_collection"
+    t.text "three_letter_word_collection"
+    t.text "four_letter_word_collection"
+    t.text "five_letter_word_collection"
+    t.text "six_letter_word_collection"
+    t.text "seven_letter_word_collection"
+    t.text "eight_letter_word_collection"
+    t.text "nine_letter_word_collection"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
