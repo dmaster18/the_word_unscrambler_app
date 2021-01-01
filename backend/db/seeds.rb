@@ -3722,8 +3722,6 @@ game_word_collection.save
 
 
 
-
-
 david = Player.new(name: 'David', score: 100)
 raul = Player.new(name: 'Raul', score: 15)
 nikolai = Player.new(name: 'Nikolai', score: 50)
@@ -3731,6 +3729,7 @@ horatio = Player.new(name: 'Horatio', score: 75)
 esteban = Player.new(name: 'Esteban', score: 550)
 claudia = Player.new(name: 'Claudia', score: 10)
 pablo = Player.new(name: 'Pablo, score: 40')
+
 david.save
 raul.save
 nikolai.save
