@@ -3715,8 +3715,6 @@ zymurgies.save
 
 
 
-
-
 game_word_collection = WordCollection.new(name: 'Game Word Collection')
 game_word_collection.save
 
