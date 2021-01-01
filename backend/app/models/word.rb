@@ -46,5 +46,4 @@ class Word < ApplicationRecord
     all_words << nine_letter_words
     self.all_words = all_words.flatten
   end
-
 end
