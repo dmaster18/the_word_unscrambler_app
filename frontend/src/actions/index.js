@@ -2,6 +2,22 @@ function shuffle(letters) {
   return letters.split('').sort(() => Math.random() - 0.5);
 }
 
+export function fetchTrainerWords {
+  return (dispatch) => {
+    dispatch({type: 'FETCH_WORDS_START' });
+    return fetch('http://127.0.0.1:3000/word_collections')
+    .then(response => response.json())
+    .then(json => dispatch({type: 'FETCH_WORDS_SUCCESS',
+      data: json.data.map(word => ({
+        name: word.attributes.name,
+        letterArray: shuffle(word.attributes.name),
+        allWords: word.attributes.all_words.map((word) => word.toLowerCase())
+      }))
+    }))
+    .catch((error) => {console.log(error); dispatch({type: 'FETCH_WORDS_ERROR'})});
+  };
+}
+
 export function fetchWords(numberOfWords) {
   return (dispatch) => {
     dispatch({type: 'FETCH_WORDS_START' });
