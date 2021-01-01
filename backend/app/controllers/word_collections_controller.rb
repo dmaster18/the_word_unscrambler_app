@@ -4,6 +4,6 @@ class WordCollectionsController < ApplicationController
     options = {
       include: []
     }
-    render json: WordSerializer.new(trainerWords, options)
+    render json: WordCollectionSerializer.new(trainerWords, options)
   end
 end

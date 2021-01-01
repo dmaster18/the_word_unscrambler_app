@@ -4,10 +4,10 @@ function shuffle(letters) {
 
 export function fetchTrainerWords {
   return (dispatch) => {
-    dispatch({type: 'FETCH_WORDS_START' });
+    dispatch({type: 'FETCH_TRAINER_WORDS_START' });
     return fetch('http://127.0.0.1:3000/word_collections')
     .then(response => response.json())
-    .then(json => dispatch({type: 'FETCH_WORDS_SUCCESS',
+    .then(json => dispatch({type: 'FETCH_TRAINER_WORDS_SUCCESS',
       data: json.data.map(word => ({
         name: word.attributes.name,
         letterArray: shuffle(word.attributes.name),
