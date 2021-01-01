@@ -1,5 +1,4 @@
 class Word < ApplicationRecord
-  belongs_to :word_collection
 
 #Word Class Variables
   @@all_two_letter_words = []
