@@ -11,7 +11,6 @@ class WordCollection < ApplicationRecord
   serialize :eight_word_collection, Array
   serialize :nine_word_collection, Array
 
-
   def generate_word_collections
     Word.all.each {|word|
       self.two_word_collection << word.two_letter_words
@@ -23,14 +22,15 @@ class WordCollection < ApplicationRecord
       self.eight_word_collection << word.eight_letter_words
       self.nine_word_collection << word.nine_letter_words
     }
-    self.two_word_collection = self.two_word_collection.uniq.flatten
-    self.three_word_collection = self.three_word_collection.uniq.flatten
-    self.four_word_collection = self.four_word_collection.uniq.flatten
-    self.five_word_collection = self.five_word_collection.uniq.flatten
-    self.six_word_collection = self.six_word_collection.uniq.flatten
-    self.seven_word_collection = self.seven_word_collection.uniq.flatten
-    self.eight_word_collection = self.eight_word_collection.uniq.flatten
-    self.nine_word_collection = self.nine_word_collection.uniq.flatten
+    self.two_word_collection = self.two_word_collection.uniq.flatten.sort
+    self.three_word_collection = self.three_word_collection.uniq.flatten.sort
+    self.four_word_collection = self.four_word_collection.uniq.flatten.sort
+    self.five_word_collection = self.five_word_collection.uniq.flatten.sort
+    self.six_word_collection = self.six_word_collection.uniq.flatten.sort
+    self.seven_word_collection = self.seven_word_collection.uniq.flatten.sort
+    self.eight_word_collection = self.eight_word_collection.uniq.flatten.sort
+    self.nine_word_collection = self.nine_word_collection.uniq.flatten.sort
+    self
   end
 
 end
