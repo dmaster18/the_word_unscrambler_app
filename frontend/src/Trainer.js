@@ -6,7 +6,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import {fetchTrainerWords } from './actions';
+import { fetchTrainerWords } from './actions';
 
 function mapDispatchToProps(dispatch){
   return { fetchTrainerWords: () => dispatch(fetchTrainerWords) }
@@ -30,18 +30,16 @@ class Trainer extends Component {
       case 'Running': {
         return (
           <div id="trainer">
-            < numberOfMilliseconds={this.props.gameDuration} onComplete={this.props.endGame}/>
-            <WordContainer />
+            <WordCollection columnHeader = 'Two-Letter Words' columnType={this.props.twoLetterWords} />
+            <WordCollection columnHeader = 'Three-Letter Words' columnType={this.props.threeLetterWords} />
+            <WordCollection columnHeader = 'Four-Letter Words' columnType={this.props.fourLetterWords} />
+            <WordCollection columnHeader = 'Five-Letter Words' columnType={this.props.fiveLetterWords} />
+            <WordCollection columnHeader = 'Six-Letter Words' columnType={this.props.sixLetterWords} />
+            <WordCollection columnHeader = 'Seven-Letter Words' columnType={this.props.sevenLetterWords} />
+            <WordCollection columnHeader = 'Eight-Letter Words' columnType={this.props.eightLetterWords} />
+            <WordCollection columnHeader = 'Nine-Letter Words' columnType={this.props.nineLetterWords} />
           </div>
         )
-        }
-        case 'Complete': {
-          return (
-            <>
-              <h1 id='final-score'>Your Final Score is {this.props.score} Points!</h1>
-              <button onClick={this.submitPlayerData}>Submit to Leaderboard</button>
-            </>
-          );
         }
     }
   }
