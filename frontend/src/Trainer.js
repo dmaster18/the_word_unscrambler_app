@@ -31,6 +31,8 @@ class Trainer extends Component {
       }
       case 'Running': {
         return (
+          <>
+          <h1 className='column-header'> Word Trainer </h1>
           <div id="trainer">
             <WordCollection columnHeader='Two-Letter Words'  columnData={this.props.trainerWords[0].twoLetterWords} />
             <WordCollection columnHeader='Three-Letter Words' columnData={this.props.trainerWords[0].threeLetterWords} />
@@ -41,6 +43,7 @@ class Trainer extends Component {
             <WordCollection columnHeader='Eight-Letter Words' columnData={this.props.trainerWords[0].eightLetterWords} />
             <WordCollection columnHeader='Nine-Letter Words'  columnData={this.props.trainerWords[0].nineLetterWords} />
           </div>
+          </>
         )
         }
     }
