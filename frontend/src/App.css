@@ -86,7 +86,7 @@ div.tile-container {
     border-radius: 9px;
   }
 
-  #display-current-word span{
+  #display-current-word span, .column-header{
     font-weight: bold;
     text-decoration: underline;
   }
