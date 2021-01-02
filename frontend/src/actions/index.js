@@ -9,14 +9,14 @@ export function fetchTrainerWords {
     .then(response => response.json())
     .then(json => dispatch({type: 'FETCH_TRAINER_WORDS_SUCCESS',
       data: json.data.map(word_collection => ({
-        twoLetterWords: word.attributes.two_letter_word_collection,
-        threeLetterWords: word.attributes.three_letter_word_collection,
-        fourLetterWords: word.attributes.four_letter_word_collection,
-        fiveLetterWords: word.attributes.five_letter_word_collection,
-        sixLetterWords: word.attributes.six_letter_word_collection,
-        sevenLetterWords: word.attributes.seven_letter_word_collection,
-        eightLetterWords: word.attributes.eight_letter_word_collection,
-        nineLetterWords: word.attributes.nine_letter_word_collection
+        twoLetterWords: word_collection.attributes.two_letter_word_collection,
+        threeLetterWords: word_collection.attributes.three_letter_word_collection,
+        fourLetterWords: word_collection.attributes.four_letter_word_collection,
+        fiveLetterWords: word_collection.attributes.five_letter_word_collection,
+        sixLetterWords: word_collection.attributes.six_letter_word_collection,
+        sevenLetterWords: word_collection.attributes.seven_letter_word_collection,
+        eightLetterWords: word_collection.attributes.eight_letter_word_collection,
+        nineLetterWords: word_collection.attributes.nine_letter_word_collection
       }))
   }))
   .catch((error) => {console.log(error); dispatch({type: 'FETCH_TRAINER_WORDS_ERROR'})});
