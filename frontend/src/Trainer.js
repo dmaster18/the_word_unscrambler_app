@@ -11,11 +11,11 @@ import WordCollection from './trainer_components/WordCollection'
 
 
 function mapDispatchToProps(dispatch){
-  return { fetchTrainerWords: () => dispatch(fetchTrainerWords) }
+  return { fetchTrainerWords: () => dispatch(fetchTrainerWords()) }
 }
 
 function mapStateToProps(state) {
-  return { trainerWords: state.trainerWords}
+  return { trainerWords: state.trainerWords, status: state.trainerStatus}
 }
 
 class Trainer extends Component {
