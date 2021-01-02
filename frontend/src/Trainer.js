@@ -41,7 +41,7 @@ class Trainer extends Component {
               <WordCollection columnHeader='Seven-Letter Words' columnData={this.props.trainerWords[0].sevenLetterWords} />
               <WordCollection columnHeader='Eight-Letter Words' columnData={this.props.trainerWords[0].eightLetterWords} />
               <WordCollection columnHeader='Nine-Letter Words' columnData={this.props.trainerWords[0].nineLetterWords} />
-            </tablle>
+            </table>
           </div>
         )
         }
