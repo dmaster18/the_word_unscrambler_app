@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import { fetchTrainerWords } from './actions';
+import
 
 function mapDispatchToProps(dispatch){
   return { fetchTrainerWords: () => dispatch(fetchTrainerWords) }
@@ -30,14 +31,14 @@ class Trainer extends Component {
       case 'Running': {
         return (
           <div id="trainer">
-            <WordCollection columnHeader = 'Two-Letter Words' columnType={this.props.twoLetterWords} />
-            <WordCollection columnHeader = 'Three-Letter Words' columnType={this.props.threeLetterWords} />
-            <WordCollection columnHeader = 'Four-Letter Words' columnType={this.props.fourLetterWords} />
-            <WordCollection columnHeader = 'Five-Letter Words' columnType={this.props.fiveLetterWords} />
-            <WordCollection columnHeader = 'Six-Letter Words' columnType={this.props.sixLetterWords} />
-            <WordCollection columnHeader = 'Seven-Letter Words' columnType={this.props.sevenLetterWords} />
-            <WordCollection columnHeader = 'Eight-Letter Words' columnType={this.props.eightLetterWords} />
-            <WordCollection columnHeader = 'Nine-Letter Words' columnType={this.props.nineLetterWords} />
+            <WordCollection columnHeader = 'Two-Letter Words' columnData={this.props.trainerWords.twoLetterWords} />
+            <WordCollection columnHeader = 'Three-Letter Words' columnData={this.props.trainerWords.threeLetterWords} />
+            <WordCollection columnHeader = 'Four-Letter Words' columnData={this.props.trainerWords.fourLetterWords} />
+            <WordCollection columnHeader = 'Five-Letter Words' columnData={this.props.trainerWords.fiveLetterWords} />
+            <WordCollection columnHeader = 'Six-Letter Words' columnData={this.props.trainerWords.sixLetterWords} />
+            <WordCollection columnHeader = 'Seven-Letter Words' columnData={this.props.trainerWords.sevenLetterWords} />
+            <WordCollection columnHeader = 'Eight-Letter Words' columnData={this.props.trainerWords.eightLetterWords} />
+            <WordCollection columnHeader = 'Nine-Letter Words' columnData={this.props.trainerWords.nineLetterWords} />
           </div>
         )
         }
