@@ -2,7 +2,7 @@ function shuffle(letters) {
   return letters.split('').sort(() => Math.random() - 0.5);
 }
 
-export function fetchTrainerWords {
+export function fetchTrainerWords() {
   return (dispatch) => {
     dispatch({type: 'FETCH_TRAINER_WORDS_START' });
     return fetch('http://127.0.0.1:3000/word_collections')

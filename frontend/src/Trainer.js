@@ -7,14 +7,15 @@ import {
   Link
 } from "react-router-dom";
 import { fetchTrainerWords } from './actions';
-import
+import WordCollection from './trainer_components/WordCollection'
+
 
 function mapDispatchToProps(dispatch){
   return { fetchTrainerWords: () => dispatch(fetchTrainerWords) }
 }
 
 function mapStateToProps(state) {
-  return null
+  return { trainerWords: state.trainerWords}
 }
 
 class Trainer extends Component {
