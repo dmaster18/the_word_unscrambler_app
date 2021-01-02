@@ -8,9 +8,8 @@ import {
 } from "react-router-dom";
 import {fetchTrainerWords } from './actions';
 
-
 function mapDispatchToProps(dispatch){
-  return { fetchAllWords: () => dispatch(fetchTrainerWords())}
+  return { fetchTrainerWords: () => dispatch(fetchTrainerWords) }
 }
 
 function mapStateToProps(state) {
