@@ -32,20 +32,20 @@ class Trainer extends Component {
       case 'Running': {
         return (
           <>
-          <h1 className='column-header'> Word Trainer </h1>
-          <div id="trainer">
-            <WordCollection columnHeader='Two-Letter Words'  columnData={this.props.trainerWords[0].twoLetterWords} />
-            <WordCollection columnHeader='Three-Letter Words' columnData={this.props.trainerWords[0].threeLetterWords} />
-            <WordCollection columnHeader='Four-Letter Words' columnData={this.props.trainerWords[0].fourLetterWords} />
-            <WordCollection columnHeader='Five-Letter Words' columnData={this.props.trainerWords[0].fiveLetterWords} />
-            <WordCollection columnHeader='Six-Letter Words' columnData={this.props.trainerWords[0].sixLetterWords} />
-            <WordCollection columnHeader='Seven-Letter Words' columnData={this.props.trainerWords[0].sevenLetterWords} />
-            <WordCollection columnHeader='Eight-Letter Words' columnData={this.props.trainerWords[0].eightLetterWords} />
-            <WordCollection columnHeader='Nine-Letter Words'  columnData={this.props.trainerWords[0].nineLetterWords} />
-          </div>
+            <h1 className='column-header'> Word Trainer </h1>
+            <div id="trainer">
+              <WordCollection columnHeader='Two-Letter Words'  columnData={this.props.trainerWords[0].twoLetterWords} />
+              <WordCollection columnHeader='Three-Letter Words' columnData={this.props.trainerWords[0].threeLetterWords} />
+              <WordCollection columnHeader='Four-Letter Words' columnData={this.props.trainerWords[0].fourLetterWords} />
+              <WordCollection columnHeader='Five-Letter Words' columnData={this.props.trainerWords[0].fiveLetterWords} />
+              <WordCollection columnHeader='Six-Letter Words' columnData={this.props.trainerWords[0].sixLetterWords} />
+              <WordCollection columnHeader='Seven-Letter Words' columnData={this.props.trainerWords[0].sevenLetterWords} />
+              <WordCollection columnHeader='Eight-Letter Words' columnData={this.props.trainerWords[0].eightLetterWords} />
+              <WordCollection columnHeader='Nine-Letter Words'  columnData={this.props.trainerWords[0].nineLetterWords} />
+            </div>
           </>
         )
-        }
+      }
     }
   }
 }

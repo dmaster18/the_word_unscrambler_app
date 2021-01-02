@@ -6,7 +6,7 @@ const WordCollection = (props) => (
       {props.columnHeader}
     </h3>
     <ul>
-      {props.columnData.map(word => <li>{word}</li>)}
+      {props.columnData.map(word => <li><a href={`https://www.dictionary.com/browse/${word.toLowerCase()}?s=t`}>{word}</a></li>)}
     </ul>
   </div>
 )
