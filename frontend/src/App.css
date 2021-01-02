@@ -145,6 +145,7 @@ div.tile-container {
     color: white;
   }
 
-  .two-letter-words {
-    
-  }
+#trainer {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
 const WordCollection = (props) => (
-  //<div className= 'wordCollectionColumn'>
   <div className='word-collections'>
-    <div className={props.columnSelector}>
+    <div className='word-column'>
       <h3>
         {props.columnHeader}
       </h3>
