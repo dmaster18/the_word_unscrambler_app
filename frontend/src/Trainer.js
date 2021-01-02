@@ -13,15 +13,13 @@ function mapDispatchToProps(dispatch){
 }
 
 function mapStateToProps(state) {
-  return {status: state.gameStatus, score: state.score,
-    letterArray: state.wordSet.length > 0 ? state.wordSet[state.wordIndex].letterArray : [],
-    allWords: state.wordSet.length > 0 ? state.wordSet[state.wordIndex].allWords : []}
+  return null
 }
 
 class Trainer extends Component {
 
  componentDidMount() {
-   this.props.fetchWords(this.props.numberOfWords);
+   this.props.fetchTrainerWords();
  }
 
   render() {
@@ -31,8 +29,8 @@ class Trainer extends Component {
       }
       case 'Running': {
         return (
-          <div id="game">
-            <Timer numberOfMilliseconds={this.props.gameDuration} onComplete={this.props.endGame}/>
+          <div id="trainer">
+            < numberOfMilliseconds={this.props.gameDuration} onComplete={this.props.endGame}/>
             <WordContainer />
           </div>
         )
