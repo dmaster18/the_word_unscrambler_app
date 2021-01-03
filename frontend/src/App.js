@@ -26,32 +26,26 @@ function App() {
                 <Link to="/trainer">Word Trainer</Link>
               </nav>
           </Route>
-          <Route exact path="/quick-game"> //A Quick Game consists of 1 letter grouping and is 1 minute long
+          <Route exact path="/quick-game">
             <Game numberOfWords={1} gameDuration={1*60*1000}/>
             <nav>
               <Link to="/">Home Page</Link>
             </nav>
           </Route>
-          <Route exact path="/medium-game"> //A Medium Game consists of 5 letter groupings and is 3 minutes long
+          <Route exact path="/medium-game">
             <Game numberOfWords={5} gameDuration={3*60*1000}/>
             <nav>
               <Link to="/">Home Page</Link>
             </nav>
           </Route>
-          <Route exact path="/long-game"> //A Long Game consists of 10 letter groupings and is 5 minutes long
+          <Route exact path="/long-game">
             <Game numberOfWords={10} gameDuration={5*60*1000}/>
             <nav>
               <Link to="/">Home Page</Link>
             </nav>
           </Route>
-          <Route exact path="/trainer">//Path to Word Trainer to practice and learn new words
+          <Route exact path="/trainer">
             <Trainer/>
-            <nav>
-              <Link to="/">Home Page</Link>
-            </nav>
-          </Route>
-          <Route exact path="/leaderboard">
-            <Leaderboard/>
             <nav>
               <Link to="/">Home Page</Link>
             </nav>

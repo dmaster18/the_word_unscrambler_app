@@ -38,7 +38,7 @@ class Game extends Component {
       case 'Running': {
         return (
           <div id="game">
-            <Timer numberOfMilliseconds={this.props.gameDuration} onComplete={this.props.endGame}/>
+            <span><u>Time Remaining</u>: </span><Timer numberOfMilliseconds={this.props.gameDuration} onComplete={this.props.endGame}/>
             <WordContainer />
           </div>
         )
