@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-image: '../public/images/learn.jpg'
 }
 
 .App-logo {
@@ -38,11 +37,18 @@
   }
 }
 
+.navigation-container {
+
+}
+
+
 .container div {
   background-color: red;
 }
 
 .navigation {
+  background-image: url("./images/learn.jpg");
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;

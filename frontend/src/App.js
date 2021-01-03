@@ -19,13 +19,13 @@ function App() {
         <div>
         <Switch>
           <Route exact path="/">
-            <nav className="navigation">
-              <h1 className="app-title">The Word Unscrambler</h1>
-              <Link to="/quick-game">Quick Game</Link>
-              <Link to="/full-game">Full Game</Link>
-              <Link to="/trainer">Word Trainer</Link>
-              <Link to="/leaderboard">Leaderboard</Link>
-            </nav>
+              <nav className="navigation">
+                <h1 className="app-title">The Word Unscrambler</h1>
+                <Link to="/quick-game">Quick Game</Link>
+                <Link to="/full-game">Full Game</Link>
+                <Link to="/trainer">Word Trainer</Link>
+                <Link to="/leaderboard">Leaderboard</Link>
+              </nav>
           </Route>
           <Route exact path="/quick-game">
             <Game numberOfWords={1} gameDuration={1*60*1000}/>
