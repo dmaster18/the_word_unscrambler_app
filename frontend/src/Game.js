@@ -48,7 +48,7 @@ class Game extends Component {
           return (
             <>
               <h1 id='final-score'>Your Final Score is {this.props.score} Points!</h1>
-              <button onClick={this.submitPlayerData}>Submit to Leaderboard</button>
+              
             </>
           );
         }

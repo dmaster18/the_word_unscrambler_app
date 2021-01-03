@@ -19,7 +19,7 @@ const Word = (props) => (
       <Button onClick={props.onDeleteLetter} innerText='Delete Last Letter'/>
       <Button onClick={props.onDeleteWord} innerText='Delete Current Word'/>
       <Button onClick={props.onSubmit} innerText='Submit Word'/>
-      {props.onGetNextWord && <Button onClick={props.onGetNextWord} innerText='Get Next Word Grouping'/>}
+      {props.onGetNextWord && <Button onClick={props.onGetNextWord} innerText='Get Next Letter Grouping'/>}
     </div>
     <div className='submitted-words'>
       <div className='all-submitted-words'>
