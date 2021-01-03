@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import Game from './Game.js'
 import Trainer from './Trainer.js'
-import Leaderboard from './Leaderboard.js'
 import {
   BrowserRouter as Router,
   Switch,

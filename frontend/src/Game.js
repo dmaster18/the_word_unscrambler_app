@@ -9,7 +9,6 @@ import {
 
 import WordContainer from './game-components/WordContainer';
 import Word from './game-components/Word';
-import Leaderboard from './Leaderboard';
 import Timer from './game-components/Timer';
 import {fetchWords, endGame, nextWord } from './actions';
 
@@ -48,7 +47,6 @@ class Game extends Component {
           return (
             <>
               <h1 id='final-score'>Your Final Score is {this.props.score} Points!</h1>
-              
             </>
           );
         }
