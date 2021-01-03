@@ -97,7 +97,6 @@ div.tile-container {
   height: 22px;
 }
 
-/* TODO rename these word list classes */
 .guessed-words {
   text-transform: uppercase;
 }
