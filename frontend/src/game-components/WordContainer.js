@@ -58,18 +58,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(WordContainer)
 
 
 
-  /*
-  handleDeleteLetterButtonClick = () => {
-    let currentWord = document.getElementById('current-word').innerText;
-    currentWord = currentWord.slice(0,-1);
-    this.wordArray = currentWord.split('');
-    this.eventIDArray.pop();
-    this.setState(
-      {wordFormed: this.wordArray.join(''), warning: null}
-    )
-  }
-  */
- /*
   handleDeleteWordButtonClick = () => {
     let currentWord = document.getElementById('current-word').innerText;
     currentWord = [];

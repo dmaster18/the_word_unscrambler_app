@@ -26,23 +26,6 @@ function mapStateToProps(state) {
 }
 
 class Game extends Component {
-/*
- submitPlayerData () {
-   const main = document.createElement('main');
-   const leaderboardForm = document.createElement('div');
-   leaderboardForm.innerHTML = '<form><label for="player[name]">Enter your name:</label><input type="text" name="player[name]" id="player[name]"><input type="hidden" id="player[score]" name="player[score]"><button type="submit" value="Submit" id="form-submit-button">Submit</button></form>';
-   main.appendChild(leaderboardForm);
-   const formSubmitButton = document.getElementById('form-submit-button');
-   formSubmitButton.addEventListener('click', (event) => {
-     event.preventDefault();
-     const name = document.getElementById('user[name]').value;
-     const data = { player: { name, score: this.state.score} };
-     const playersURL = 'http://127.0.0.1:3000/players';
-     return fetch(playersURL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).then(() => {console.log('hello')});
-   });
- }
- */
-
 
  componentDidMount() {
    this.props.fetchWords(this.props.numberOfWords);

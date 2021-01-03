@@ -1,6 +1,6 @@
 const initialState = {score: 0, wordIndex: 0, wordSet: [],
 gameStatus: 'Loading', usedTiles: [], correctWords: [], incorrectWords: [],
-submittedWords: [], userWarning: null, trainerWords: [], trainerStatus: 'Loading', submitStatus: 'Loading'}
+submittedWords: [], userWarning: null, trainerWords: [], trainerStatus: 'Loading', submitStatus: 'Loading', playerData: {}}
 
 export default function reducer(state=initialState, action) {
   switch(action.type) {
