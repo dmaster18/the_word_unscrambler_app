@@ -53,29 +53,3 @@ class WordContainer extends Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(WordContainer)
-
-/*
-
-
-
-  handleDeleteWordButtonClick = () => {
-    let currentWord = document.getElementById('current-word').innerText;
-    currentWord = [];
-    this.wordArray = currentWord;
-    this.eventIDArray = [];
-    this.setState(
-      {wordFormed: this.wordArray.join(''), warning: null}
-    )
-  }
-*/
-/*
-  handleSubmitButtonClick = () => {
-    this.words.push(this.state.wordFormed.toUpperCase());
-    this.evaluateWord(this.state.wordFormed.toUpperCase());
-    this.wordArray = [];
-    this.eventIDArray = [];
-    this.setState(
-      {wordsSubmitted: this.words, warning: null}
-    )
-  }
-*/
