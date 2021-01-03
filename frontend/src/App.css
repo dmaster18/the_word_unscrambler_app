@@ -37,11 +37,6 @@
   }
 }
 
-.navigation-container {
-
-}
-
-
 .container div {
   background-color: red;
 }
@@ -73,85 +68,84 @@
 }
 
 div.tile-container {
-    padding: 100px;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    grid-gap: 5px;
-  }
+  padding: 100px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  grid-gap: 5px;
+}
 
 .tile {
-    border-style: solid;
-    border-color: black;
-    background: linear-gradient(to right, #C19A6B, transparent 95%);
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 9px;
-  }
+  border-style: solid;
+  border-color: black;
+  background: linear-gradient(to right, #C19A6B, transparent 95%);
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 9px;
+}
 
-  #display-current-word span, .column-header, .app-title {
-    font-weight: bold;
-    text-decoration: underline;
-  }
+#display-current-word span, .column-header, .app-title {
+  font-weight: bold;
+  text-decoration: underline;
+}
 
-  #current-word {
-    text-transform: uppercase;
-    height: 22px;
-  }
+#current-word {
+  text-transform: uppercase;
+  height: 22px;
+}
 
-  /* TODO rename these word list classes */
-  .guessed-words {
-    text-transform: uppercase;
-  }
+/* TODO rename these word list classes */
+.guessed-words {
+  text-transform: uppercase;
+}
 
-  .submitted-words {
-    display: flex;
-    justify-content: center;
-  }
+.submitted-words {
+  display: flex;
+  justify-content: center;
+}
 
-  .submitted-words span {
-    font-weight: bold;
-    text-decoration: underline;
-  }
+.submitted-words span {
+  font-weight: bold;
+  text-decoration: underline;
+}
 
-  .submitted-words div {
-    padding-right: 20px;
-  }
+.submitted-words div {
+  padding-right: 20px;
+}
 
-  .warning {
-    font-weight: bold;
-    text-decoration: underline;
-    color: red;
-  }
+.warning {
+  font-weight: bold;
+  text-decoration: underline;
+  color: red;
+}
 
-  #final-score {
-    font-weight: bold
-  }
+#final-score {
+  font-weight: bold
+}
 
+#trainer {
+  display: flex;
+  flex-direction: row;
+}
 
 #leaderboard {
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #ddd;
-    padding: 4px;
-  }
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ddd;
+  padding: 4px;
+}
 
 #leaderboard tr:hover {background-color: #ddd;}
 
 #leaderboard tr:nth-child(even){background-color: #f2f2f2;}
 
 #leaderboard th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: orange;
-    color: white;
-  }
-
-#trainer {
-  display: flex;
-  flex-direction: row;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: orange;
+  color: white;
 }
