@@ -10,13 +10,11 @@ In a separate Terminal window, go to the program's 'frontend' directory. Run npm
 
 ## Usage
 
-From the homepage, the user can click a link to play a quick game, a full game, or view the leaderboard.
+From the homepage, the user can click links to either play a short, medium, or long game,  or he or she can feel free to visit the Word Trainer to buff up his or her vocabulary.
 
-In both the quick and full game modules, the user must score as many points as possible by creating as many words in the allotted time. Each word has a score that is equivalent to the length of the word, so a two-letter word is worth two points and a nine-letter word is worth nine points.
+In all the game modules, the user must score as many points as possible by creating as many words in the allotted time. Each word has a score that is equivalent to the length of the word, so a two-letter word is worth two points and a nine-letter word is worth nine points.
 
-In the quick word game, the user must score as many points as possible within a minute from one letter grouping. In the full word game, the user must do the same but with ten possible letter groupings within five minutes. The user cannot use any letter tile more than once when forming a new word. When a user enters a word, the game will inform him whether the word is correct or not.
-
-Users with especially high scores can feel free to post their high scores to the app's leaderboard.
+In the short word game, the user must score as many points as possible within a minute from one letter grouping. Likewise, in the medium and long word games, the user must do the same but with five and ten possible letter groups within three and five minutes, respectively. The user cannot use any letter tile more than once when forming a new word. When a user enters a word, the game will inform him whether the word is correct or not.
 
 
 ## Contributing

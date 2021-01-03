@@ -42,10 +42,10 @@ export default function reducer(state=initialState, action) {
           usedTiles: [],
         }
        } else if (state.correctWords.includes(wordFormed)) {
-          return {...state, userWarning: "Can't submit word twice.", usedTiles: []}
+          return {...state, userWarning: "Can't submit same word twice.", usedTiles: []}
        } else {
-         return {...state, submittedWords: [...state.submittedWords, wordFormed],
-         incorrectWords: [...state.incorrectWords, wordFormed], usedTiles: []
+          return {...state, submittedWords: [...state.submittedWords, wordFormed],
+          incorrectWords: [...state.incorrectWords, wordFormed], usedTiles: []
         }
       }
     case 'NEXT_WORD':
