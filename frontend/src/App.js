@@ -22,7 +22,7 @@ function App() {
                 <h1 className="app-title">The Word Unscrambler</h1>
                 <Link to="/quick-game">Quick Game</Link>
                 <Link to="/medium-game">Medium Game</Link>
-                <Link to="/full-game">Long Game</Link>
+                <Link to="/long-game">Long Game</Link>
                 <Link to="/trainer">Word Trainer</Link>
               </nav>
           </Route>
